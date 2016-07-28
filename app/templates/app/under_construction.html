@@ -1,0 +1,23 @@
+{% extends 'app/index.html'%}
+{% block main %}
+{% load static %}
+<section>
+    <div class="container">
+    <div class="row">
+        <h1>We are Working on it seriously</h1>
+        <p id="some-magic">Hover down here for some magic :), Anywayz, We are bringing the real page to life very soon :D<p>
+    </div>
+    <div id="under-construction" class="row">
+           <img src="http://www.animatedimages.org/data/media/695/animated-under-construction-image-0060.gif"></img>
+    </div>
+    <div id="developer-images" class="row">
+       <div class="col-md-6">
+           <img src="{%static "app/img/joseph1.jpg"%}">
+       </div>
+       <div class="col-md-6">
+           <img src="{%static "app/img/atiol1.jpg"%}">
+       </div>
+    </div>
+</div>
+</section>
+{%endblock%}

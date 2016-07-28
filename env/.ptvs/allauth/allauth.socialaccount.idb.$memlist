@@ -1,0 +1,17 @@
+models
+apps
+adapter
+forms
+app_settings
+templatetags
+urls
+default_app_config
+fields
+helpers
+south_migrations
+tests
+signals
+views
+providers
+admin
+migrations

@@ -1,0 +1,15 @@
+FacebookTests
+RequestFactory
+patch
+EmailAddress
+MockedResponse
+json
+SocialAccount
+account_settings
+override_settings
+get_user_model
+OAuth2TestsMixin
+TestCase
+providers
+reverse
+FacebookProvider

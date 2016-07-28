@@ -1,0 +1,8 @@
+oauth2_callback
+oauth2_login
+requests
+OAuth2Adapter
+DoubanOAuth2Adapter
+OAuth2LoginView
+DoubanProvider
+OAuth2CallbackView

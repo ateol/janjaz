@@ -1,0 +1,11 @@
+oauth2_login
+requests
+ShopifyOAuth2Adapter
+OAuth2Adapter
+ImmediateHttpResponse
+HttpResponseBadRequest
+OAuth2LoginView
+oauth2_callback
+ShopifyProvider
+OAuth2CallbackView
+re

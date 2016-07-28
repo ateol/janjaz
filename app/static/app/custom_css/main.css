@@ -1,0 +1,96 @@
+#Google {
+    background-color:orangered;
+    margin-bottom: 5px;
+}
+#Facebook {
+    background-color:cornflowerblue;
+    margin-bottom: 5px;
+}
+#more_details
+{
+    margin: 20px 20px 20px 20px;
+}
+#advanced
+{
+    text-align: left;
+    padding-left: 20px;
+}
+#push_button
+{
+    margin-bottom: 30px;
+}
+#disclaimer
+{
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+    border:gray solid 1px;
+    border-radius: 5px;
+    margin-top: 20px;
+   
+}
+#disclaimer p
+{
+    font-size: 16px !important ;
+}
+#comment-details
+{
+    font-size: 12px;
+    padding: 5px 5px 5px 5px ;
+    margin-bottom: 20px;
+
+}
+#comment
+{
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    width: 200px;
+    height: auto;
+    padding: 5px 5px 5px 5px;
+}
+.comments-container
+{
+    border-left: gray solid 1px;
+    border-right:  gray solid 1px;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    border-bottom: blanchedalmond solid 1px;
+    position: relative;
+}
+
+#comment-date
+{
+    font-size: 12px;
+}
+.file_input
+{
+    background-image: url(../img/avatars/man2.png);
+    color: transparent;
+    text-align: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 5%;
+}
+#user-profile-picture
+{
+    
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+#under-construction img
+{
+    width: 100%;
+    height: 600px;
+}
+#developer-images img
+{
+    width: 500px;
+    height: 500px;
+    border-radius: 40px;
+    margin: 10px 10px 10px 10px;
+}
+#some-magic
+{
+    font-family: 'Lobster', cursive;
+}

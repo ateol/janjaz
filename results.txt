@@ -1,0 +1,343 @@
+Adana Bilim ve Teknoloji Üniversitesi
+ADANA
+http://adanabtu.edu.tr
+Çukurova Üniversitesi
+ADANA
+http://cu.edu.tr
+Adıyaman Üniversitesi
+ADIYAMAN
+http://adiyaman.edu.tr
+Afyon Kocatepe Üniversitesi
+AFYONKARAHISAR
+http://aku.edu.tr
+Aksaray Üniversitesi
+AKSARAY
+http://aksaray.edu.tr
+Amasya Üniversitesi
+AMASYA
+http://amasya.edu.tr
+Ankara Üniversitesi
+ANKARA
+http://ankara.edu.tr
+Ankara Sosyal Bilimler Üniversitesi
+ANKARA
+http://asbu.edu.tr
+Gazi Üniversitesi
+ANKARA
+http://gazi.edu.tr
+Gülhane Askeri Tıp Akademisi
+ANKARA
+http://gata.edu.tr
+Hacettepe Üniversitesi
+ANKARA
+http://hacettepe.edu.tr
+Kara Harp Okulu
+ANKARA
+http://Kara Harp Okulu
+Orta Doğu Teknik Üniversitesi
+ANKARA
+http://odtu.edu.tr
+Polis Akademisi
+ANKARA
+http://pa.edu.tr
+Yıldırım Beyazıt Üniversitesi
+ANKARA
+http://ybu.edu.tr
+Akdeniz Üniversitesi
+ANTALYA
+http://akdeniz.edu.tr
+Alanya Alaaddin Keykubat Üniversitesi
+ANTALYA
+http://alanyaaku.edu.tr
+Ardahan Üniversitesi
+ARDAHAN
+http://ardahan.edu.tr
+Artvin Çoruh Üniversitesi
+ARTVIN
+http://artvin.edu.tr
+Adnan Menderes Üniversitesi
+AYDIN
+http://adu.edu.tr
+Ağrı İbrahim Çeçen Üniversitesi**
+AĞRI
+http://agri.edu.tr
+Balıkesir Üniversitesi
+BALIKESIR
+http://balikesir.edu.tr
+Bandırma Onyedi Eylül Üniversitesi
+BALIKESIR
+http://bandirma.edu.tr
+Bartın Üniversitesi
+BARTIN
+http://bartin.edu.tr
+Batman Üniversitesi
+BATMAN
+http://batman.edu.tr
+Bayburt Üniversitesi
+BAYBURT
+http://bayburt.edu.tr
+Bilecik Şeyh Edebali Üniversitesi**
+BILECIK
+http://bilecik.edu.tr
+Bingöl Üniversitesi
+BINGÖL
+http://bingol.edu.tr
+Bitlis Eren Üniversitesi
+BITLIS
+http://beu.edu.tr
+Abant İzzet Baysal Üniversitesi
+BOLU
+http://ibu.edu.tr
+Mehmet Akif Ersoy Üniversitesi
+BURDUR
+http://mehmetakif.edu.tr
+Bursa Teknik Üniversitesi
+BURSA
+http://btu.edu.tr
+Uludağ Üniversitesi
+BURSA
+http://uludag.edu.tr
+Pamukkale Üniversitesi
+DENIZLI
+http://pamukkale.edu.tr
+Dicle Üniversitesi
+DIYARBAKIR
+http://dicle.edu.tr
+Düzce Üniversitesi
+DÜZCE
+http://duzce.edu.tr
+Trakya Üniversitesi
+EDIRNE
+http://trakya.edu.tr
+Fırat Üniversitesi
+ELAZIĞ
+http://firat.edu.tr
+Erzincan Üniversitesi
+ERZINCAN
+http://erzincan.edu.tr
+Atatürk Üniversitesi
+ERZURUM
+http://atauni.edu.tr
+Erzurum Teknik Üniversitesi
+ERZURUM
+http://erzurum.edu.tr
+Anadolu Üniversitesi
+ESKIŞEHIR
+http://anadolu.edu.tr
+Eskişehir Osmangazi Üniversitesi
+ESKIŞEHIR
+http://ogu.edu.tr
+Gaziantep Üniversitesi
+GAZIANTEP
+http://gantep.edu.tr
+Giresun Üniversitesi
+GIRESUN
+http://giresun.edu.tr
+Gümüşhane Üniversitesi
+GÜMÜŞHANE
+http://gumushane.edu.tr
+Hakkari Üniversitesi
+HAKKARI
+http://hakkari.edu.tr
+İskenderun Teknik Üniversitesi
+HATAY
+http://iste.edu.tr
+Mustafa Kemal Üniversitesi
+HATAY
+http://mku.edu.tr
+Süleyman Demirel Üniversitesi
+ISPARTA
+http://sdu.edu.tr
+Iğdır Üniversitesi
+IĞDIR
+http://igdir.edu.tr
+Boğaziçi Üniversitesi
+İSTANBUL
+http://boun.edu.tr
+Deniz Harp Okulu
+İSTANBUL
+http://dho.edu.tr
+Galatasaray Üniversitesi
+İSTANBUL
+http://gsu.edu.tr
+Hava Harp Okulu
+İSTANBUL
+http://hho.edu.tr
+İstanbul Medeniyet Üniversitesi
+İSTANBUL
+http://medeniyet.edu.tr
+İstanbul Üniversitesi
+İSTANBUL
+http://istanbul.edu.tr
+İstanbul Teknik Üniversitesi
+İSTANBUL
+http://itu.edu.tr
+Marmara Üniversitesi
+İSTANBUL
+http://marmara.edu.tr
+Mimar Sinan Güzel Sanatlar Üniversitesi
+İSTANBUL
+http://msgsu.edu.tr
+Türk Alman Üniversitesi
+İSTANBUL
+http://tau.edu.tr
+Türkiye Sağlık Bilimleri Üniversitesi
+İSTANBUL
+http://
+Türkiye Uluslararası İslam, Bilim ve Teknoloji Üniversitesi
+İSTANBUL
+http://
+Yıldız Teknik Üniversitesi
+İSTANBUL
+http://yildiz.edu.tr
+Dokuz Eylül Üniversitesi
+İZMIR
+http://deu.edu.tr
+Ege Üniversitesi
+İZMIR
+http://ege.edu.tr
+İzmir Kâtip Çelebi Üniversitesi
+İZMIR
+http://ikc.edu.tr
+İzmir Yüksek Teknoloji Enstitüsü
+İZMIR
+http://iyte.edu.tr
+Kahramanmaraş Sütçü İmam Üniversitesi
+KAHRAMANMARAŞ
+http://ksu.edu.tr
+Karabük Üniversitesi
+KARABÜK
+http://karabuk.edu.tr
+Karamanoğlu Mehmetbey Üniversitesi
+KARAMAN
+http://kmu.edu.tr
+Kafkas Üniversitesi
+KARS
+http://kafkas.edu.tr
+Kastamonu Üniversitesi
+KASTAMONU
+http://kastamonu.edu.tr
+Abdullah Gül Üniversitesi**
+KAYSERI
+http://agu.edu.tr
+Erciyes Üniversitesi
+KAYSERI
+http://erciyes.edu.tr
+Kilis 7 Aralık Üniversitesi
+KILIS
+http://kilis.edu.tr
+Gebze Teknik Üniversitesi
+KOCAELI
+http://gtu.edu.tr
+Kocaeli Üniversitesi
+KOCAELI
+http://kocaeli.edu.tr
+Necmettin Erbakan Üniversitesi**
+KONYA
+http://konya.edu.tr
+Selçuk Üniversitesi
+KONYA
+http://selcuk.edu.tr
+Dumlupınar Üniversitesi
+KÜTAHYA
+http://dpu.edu.tr
+Kırklareli Üniversitesi
+KIRKLARELI
+http://kirklareli.edu.tr
+Kırıkkale Üniversitesi
+KIRIKKALE
+http://kku.edu.tr
+Ahi Evran Üniversitesi
+KIRŞEHIR
+http://ahievran.edu.tr
+İnönü Üniversitesi
+MALATYA
+http://inonu.edu.tr
+Celal Bayar Üniversitesi
+MANISA
+http://bayar.edu.tr
+Mardin Artuklu Üniversitesi
+MARDIN
+http://artuklu.edu.tr
+Mersin Üniversitesi
+MERSIN
+http://mersin.edu.tr
+Muğla Sıtkı Koçman Üniversitesi
+MUĞLA
+http://mu.edu.tr
+Muş Alparslan Üniversitesi
+MUŞ
+http://alparslan.edu.tr
+Nevşehir Hacı Bektaş Veli Üniversitesi
+NEVŞEHIR
+http://nevsehir.edu.tr
+Niğde Üniversitesi
+NIĞDE
+http://nigde.edu.tr
+Ordu Üniversitesi
+ORDU
+http://odu.edu.tr
+Osmaniye Korkut Ata Üniversitesi
+OSMANIYE
+http://osmaniye.edu.tr
+Recep Tayyip Erdoğan Üniversitesi**
+RIZE
+http://erdogan.edu.tr
+Sakarya Üniversitesi
+SAKARYA
+http://sakarya.edu.tr
+Ondokuz Mayıs Üniversitesi
+SAMSUN
+http://omu.edu.tr
+Siirt Üniversitesi
+SIIRT
+http://siirt.edu.tr
+Sinop Üniversitesi
+SINOP
+http://sinop.edu.tr
+Cumhuriyet Üniversitesi
+SIVAS
+http://cumhuriyet.edu.tr
+Namık Kemal Üniversitesi
+TEKIRDAĞ
+http://nku.edu.tr
+Gaziosmanpaşa Üniversitesi
+TOKAT
+http://gop.edu.tr
+Karadeniz Teknik Üniversitesi
+TRABZON
+http://ktu.edu.tr
+Tunceli Üniversitesi
+TUNCELI
+http://tunceli.edu.tr
+Uşak Üniversitesi
+UŞAK
+http://usak.edu.tr
+Yüzüncü Yıl Üniversitesi
+VAN
+http://yyu.edu.tr
+Yalova Üniversitesi
+YALOVA
+http://yalova.edu.tr
+Bozok Üniversitesi
+YOZGAT
+http://bozok.edu.tr
+Bülent Ecevit Üniversitesi**
+ZONGULDAK
+http://beun.edu.tr
+Çanakkale Onsekiz Mart Üniversitesi
+ÇANAKKALE
+http://comu.edu.tr
+Çankırı Karatekin Üniversitesi
+ÇANKIRI
+http://karatekin.edu.tr
+Hitit Üniversitesi
+ÇORUM
+http://hitit.edu.tr
+Harran Üniversitesi
+ŞANLIURFA
+http://harran.edu.tr
+Şırnak Üniversitesi
+ŞIRNAK
+http://sirnak.edu.tr
+

@@ -1,0 +1,62 @@
+{%extends 'app/index.html'%}
+
+{% block main%}
+<section>
+    <div class="container">
+
+
+        <div class="row">
+             <div class="form-group">
+                      <form method="get" action="" class="form-horizontal">
+                          <div class="col-md-3 text-center">
+                            <select name="city" class="selectpicker select-btn" data-live-search="true" title="City">
+                            {% for k,v in city_choices%}
+                                  <option value="{{k}}">{{v}}</option>                                                                  
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select name="category" class="selectpicker" data-live-search="true" title="Status">
+                            <option value="">Status</option>
+                            <option value="Public">Public</option>
+                            <option value="Private">Private</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-lg">Ok</button>
+                    </div>
+                  </form>
+              </div>
+        </div>
+       
+        <div class="row">
+            <table class = "table">
+                <caption>List of all Universities</caption>
+                
+                <thead>
+                    <tr>
+                        <th>University</th>
+                        <th>Status</th>
+                        <th>City</th>
+                        <th>Wesbsite</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                    {% for university in all_universities %}
+                        <td class="active">{{university.name}}</td>
+                        <td class="success">{{university.status}}</td>
+                        <td class="warning">{{university.city}}</td>
+                        <td class="danger"><a href="{{university.university_website}}">{{university.university_website}}</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+        </div>
+        
+       </div>
+
+</section>
+
+{% endblock %}

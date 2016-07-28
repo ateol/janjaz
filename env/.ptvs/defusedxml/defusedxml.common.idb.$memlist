@@ -1,0 +1,12 @@
+_apply_defusing
+PY3
+PY31
+NotSupportedError
+MethodType
+PY26
+_generate_etree_functions
+DTDForbidden
+EntitiesForbidden
+ExternalReferenceForbidden
+sys
+DefusedXmlException

@@ -1,0 +1,9 @@
+patch
+views
+TestCase
+consumer
+OpenIDTests
+AXAttribute
+get_user_model
+Mock
+reverse

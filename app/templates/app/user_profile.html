@@ -1,0 +1,126 @@
+{% extends 'app/index.html'%}
+{% load static %}
+
+{% block main%}
+ <!-- user profile -->
+        <!-- header -->
+   <section>
+        <header id="header-city">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                   <!-- <img class="img-responsive" src="img/profile.png" alt=""> -->
+                    <div class="">
+                        <!--<span class="name">Make your expat project a smash!</span> -->
+                        <h2>Welcome {{user.username}}</h2>
+                         <!-- <hr class="star-light"> -->
+                       <!-- <span class="skills">Discover the largest expat help and support network</span> -->
+                    </div>
+                     <!-- search bar here
+                     <div class="row">
+                        <div class="spacing col-md-6 col-lg-offset-3">
+                            <form action="" class="search-form">
+                                <div class="form-group has-feedback">
+                                    <input type="text" class="form-control" name="search" id="search" placeholder="search city, country">
+                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                </div>
+                            </form>
+                        </div>
+                     </div>  -->
+                </div>
+            </div>
+        </div>
+    </header> <!-- end header -->
+    </section>
+
+    <section class="success">
+        <div class="container">
+            <!-- photos of prominent places in a city -->
+            <div class="row">
+                <h3 class="text-center" style="text-transformation: lowercase;">Ankara Famous Places</h3>
+                <div class="enclose-img text-center italicize">
+                    <div class="col-md-2">
+                        <img src="http://tse2.mm.bing.net/th?id=OIP.Mb31dabf7b528871f133be3a6189de782o0&pid=15.1" alt="anitkabiri" class="img-responsive" />
+                       <figcaption>AnitKabir, burial ground of Ataturk</figcaption>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="http://tse1.mm.bing.net/th?id=OIP.Mfd8ea5c3e9b6d22dcf36eaa0459686b7o0&pid=15.1" alt="Ankara castle" class="img-responsive" />
+                        <figcaption>Ankara castle</figcaption>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="http://tse4.mm.bing.net/th?id=OIP.M5342439d5346512fac4c7e4e3e6c00e2o0&pid=15.1" alt="Famous Ankara Tower" class="img-responsive" />
+                        <figcaption>The famous tower of Ankara</figcaption>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="https://images.trvl-media.com/media/content/shared/images/travelguides/destination/386/State-Art-And-Sculpture-Museum-76134.jpg" alt="State art and sculpture museum" class="img-responsive" />
+                        <figcaption>State Art and Sculpture Museum</figcaption>
+                    </div>
+                    <div class="col-md-2">
+                        <img class="img-responsive" src="http://tse3.mm.bing.net/th?id=OIP.M3c49159d6ce201bd017a4a4e091b3a29o0&pid=15.1" alt="Kocatepe mosque" />
+                        <figcaption>Kocatepe mosque</figcaption>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7 text-center" style="padding: 50px;">
+                    <h3>Events in {{event.city}}</h3>
+                </div>
+            </div>
+            {% for event in upcoming_events %}
+            <div class="row">
+                <div class="col-md-7">
+                        <div id="sr-column">
+                            <div class="row sr-data">
+                                <div class="col-md-12 e-upcoming">
+                                    <div class="col-md-6">
+                                        <div class="e-cat">{{event.category}}</div>
+                                        <img class="img-responsive" src="img/konya.jpg"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="events-title">{{event.title}}</div>
+                                        <p class="event-data">{{event.start_time}}  - {{event.end_time}} <br> <i class="fa fa-map-marker"></i> {{event.city}}
+                                        </p>
+                                        <div style="margin-top: 20px;">
+                                            <a href="#" class="btn btn-default"><i class="fa fa-eye"></i> Find out more</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+        
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
+            {% endfor %}
+            <div class="section-forum">
+                <h3>Questions and Answers</h3>
+            
+                <div class="row forum-content">               
+                    <div class="content-wrapper">
+                        <div class="col-lg-1">
+                            <img class="img-responsive" alt="user-name" src="{%static "app/img/avatars/man1.png"%}"/>
+                        </div>
+                        <div class="col-lg-6">
+                            <h4>Title of the topic</h4>
+                            By Atiol Raphael
+                        </div>
+                        <div class="col-lg-1">
+                            <h4>24</h4>
+                            Replies
+                        </div>
+                        <div class="col-lg-1">
+                            <h4>2K</h4>
+                            Views
+                        </div>
+                        <div class="col-lg-2">
+                            <h4><i class="fa fa-map-marker" aria-hidden="true"></i> Juba</h4>
+                            one minute ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+
+{% if have_events %}
+    {% for event in events %}
+        <li>{{ event.object.title }}</li>
+    {%endfor%}
+{% else %}
+    <li>nothing to show<li>
+{% endif %} 

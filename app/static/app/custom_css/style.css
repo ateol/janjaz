@@ -1,0 +1,303 @@
+
+#logo img {
+    position: relative;
+    width: auto;
+    height: 48px;
+}
+
+/* styling the nav bar */
+.navbar-nav > li > .dropdown-menu {
+    background-color: #283f55;
+    border-bottom: 8px solid #ea8d15;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.navbar-nav > li > .dropdown-menu > li {
+       padding: 10px 0;
+}
+
+.navbar-nav > li > .dropdown-menu > li a {
+    color: #fff;
+   margin: 0 auto;
+}
+
+.navbar-nav > li > .dropdown-menu > li a:hover, .navbar-nav > li > .dropdown-menu > li a:active,  .navbar-nav > li > .dropdown-menu > li a:focus {
+    margin: 0;
+    color: #ff8f00;
+    background: none;
+}
+
+.navbar-default .navbar-nav>li>a:focus  {
+    color: #cc7200 !important;
+}
+
+/* header 1 css */
+#header1 {
+    background: url("../img/moderncity1.jpg") no-repeat bottom center scroll !important;
+}
+
+
+#about {
+    background: #fff;
+}
+
+.section-forum {
+    background: transparent url("../img/page_background.png") 
+  no-repeat fixed 50% 0/cover;
+    margin: 30px auto;
+    padding: 20px 25px;
+    border-radius: 3px;
+}
+
+.forum-content {
+    background: #e9ebee;
+    margin: 5px 0;
+}
+
+.content-wrapper {
+    /*width: 100%;*/
+    min-height: 100px;
+    padding: 15px 15px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    background: #fff;
+}
+
+.forum-content .content-wrapper img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    /*vertical-align: middle;*/
+    border: 0;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+/* styling the post an event page */
+#post-event {
+    background: #f8fbfb;
+    color:#5a6161;
+    margin-bottom: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.go-back {
+  line-height: 35px;
+}
+
+.go-back a {
+    display: inline-block;
+    margin: 15px 0 0 0;
+    font-size: 16px;
+    color: #a7b0b8;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    text-decoration: none;
+}
+
+.back {
+    display: block;
+    margin: 15px 0 0 0;
+    font-size: 16px;
+    color: #a7b0b8;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown button {
+    width: 250px;
+    text-align: left;
+}
+
+.event {
+    padding: 20px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #eee;
+    height: 80px;
+    background: #f0f2f2;
+}
+
+#events .btn {
+    background: #b8c8c9 !important;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid #b8c8c9;
+}
+
+.navbar-default .navbar-nav >li>a:hover {
+    color: #ff8f00 !important;
+}
+
+.btn-success.active, .btn-success:active, .btn-success:focus, .btn-success:hover, .open .dropdown-toggle.btn-success {
+    border-color: #ff8f00 !important;
+    -webkit-border-color: #ff8f00 !important;
+    -moz-border-color: #ff8f00 !important;
+}
+
+.success .events-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ff8f00;
+}
+#upcoming h3 {
+    margin-left: 18px;
+}
+.success .event-data {
+    font-size: 14px;
+    line-height: 1.8;
+}
+#upcoming .event-data a.btn {
+    margin-bottom: 0;
+}
+
+#upcoming .show-results {
+    text-transform: lowercase;
+    color: #5a6161 !important;
+}
+
+.e-upcoming {
+    margin: 15px auto;
+    padding: 10px 0;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.btn btn-default {
+    border: 1px solid #ff8f00 !important;
+    color: #ff8f00;
+}
+
+.success .e-upcoming .e-cat {
+    display: block;
+    padding: 8px;
+    color: mediumslateblue;
+}
+
+.success .e-upcoming img {
+    width: 320px;
+    height: 90px;
+}
+
+.success .sr-column {
+    min-height: 200PX;
+    width: auto;
+}
+
+/* new css for the search result*/
+.s_result {
+    display: none;
+}
+
+.see {
+    display: none;
+}
+
+.visible {
+    display: inherit;
+}
+
+.success .s_result {
+    display: none;
+}
+
+/* end of new css for search result */
+
+.success .background-img {
+    width: 600px;
+    height: 250px;
+}
+
+.success .result-resize {
+    margin: 5px auto;
+    padding: 8px 25px;
+    height: auto;
+}
+
+.success .result-resize p {
+    font-size: 18px;
+}
+
+.content-wrapper img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.organize {
+    background: #eee;
+}
+
+.success .organize-content {
+    border: 1px solid #eee;
+    padding: 20px 18px;
+
+}
+
+.organize-content {
+    border: 1px solid #eee;
+    padding: 20px 18px;
+}
+
+.organize-content a{
+    text-decoration: none;
+    color: #ea8d15;
+}
+
+.organize-content a:hover {
+    color: #cc7200;
+}
+
+.organize textarea {
+    margin: 20px 5px;
+}
+
+/* user-profile css */
+.success .enclose-img {
+    width: 100%;
+    margin-left: 55px;
+}
+
+.enclose-img > div {
+    padding: 0;
+    margin: 0 5px;
+}
+
+.success .enclose-img img {
+    width: auto;
+    height: 120px;
+    border-radius: 1px;
+    margin: 0;
+}
+
+.italicize {
+    font-size: 14px;
+    font-style: italic;
+}
+
+#header-city {
+    background: transparent url("http://world-visits.com/wp-content/uploads/2011/11/Ankara-Turkey-10-830x450.jpg") no-repeat scroll 50% 0/cover;
+}
+/* end of user profile css */
+
+/* University profile */
+#university {
+    background: transparent url("../img/studyinTurkey.jpg") no-repeat scroll 50% 0/cover;
+}
+.text-control {
+    font-family: inherit;
+    font-size: 16px;
+    padding: 15px 0;
+}
+
+.unsee {
+    display: none;
+}
+
+/* End of university profile css */

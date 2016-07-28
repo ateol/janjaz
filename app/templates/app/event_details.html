@@ -1,0 +1,125 @@
+{% extends 'app/index.html'%}
+{% load bootstrap3 %}
+{% load static %}
+{% block main%}
+{% load disqus_tags %}
+{% disqus_dev %}
+<section>
+    <div class="container">
+        <!--<div class="row">
+            <h4>Title:</h4>
+           {{event.title}}
+           <h4>City: </h4>
+            {{event.city}}
+           <h4>Category: </h4>
+           {{event.category}}ßß
+           <h4>Description: </h4>
+           {{event.description}}
+           <h4>Event Venue</h4>
+           {{event.event_venue}}
+           <h4>Start Time:</h4>
+           {{event.start_time}}
+           <h4>End Time: </h4>
+           {{event.end_time}}
+           <h4>Event's Website</h4>
+           {{event.event_website.event_website}}
+           <h4>#Comments</h4>
+           {{ comment_count }}
+        </div>-->
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+        <div class="row">
+                <div class="col-md-8">
+                    <div><h3> {{event.title}}</h3></div>
+                    <img src="{%static "app/img/antalya.jpg"%}" class="background-img img-responsive" alt="image background" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 " style="padding: 20px 10px; margin: 15px 0;">
+                    <div class="result-resize" style="font-size: 16px; line-height: 1.8;">
+                        <div>
+                            <h4>Category: {{event.category}}</h4>
+                        </div>
+                        <div>
+                            <i class="fa fa-calendar"></i> {{event.start_time}} - {{event.end_time}}
+                        </div>
+                        <div>
+                            <i class="fa fa-map-marker"></i> {{event.city}}
+                        </div>
+                        <div>
+                            <i class="fa fa-globe"></i> {{event.event_website.event_website}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 result-resize">
+                    <p>
+                       {{event.description}}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                    <button type="submit" class="btn btn-success" style="margin: 10px 20px;">
+                        <i class="fa fa-thumbs-up"></i> Like
+                    </button>
+                    <div>
+                        <p>#Comments:  {{ comment_count }}</p>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-9 organize">
+                            <h5 style="text-transformation: capitalize !important; padding: 25px; width: 400px; margin-bottom: 0;">Write your comment</h5>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+
+<!-------------------------------------------------------------------------------------------------------------->
+  
+  {% disqus_show_comments %}
+   <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+               <form action="" , method="post">
+                   {% csrf_token %}
+                   {% bootstrap_form event_comment_form %}
+                <input type="Submit" value="Comment" class="btn btn-default">
+              </form>
+        </div>
+    </div>
+
+     {% for comment in all_comments%}
+        <div class="comments-container">
+             <div class="row">
+              <div class="col-md-4 col-md-offset-1">
+                 <p><strong>{{ comment.author.username}}</strong></p>
+                </div>
+                <div id="comment-date" class="col-md-4 col-md-offset-2 text-center">
+                    {{ comment.post_date}}
+                </div>
+        </div>
+         <div class="row">
+             <div class="col-md-1 col-md-offset-1">
+                 <img id="user-profile-picture" src="http://localhost:8000/media/{{comment.author_profile.profile_picture}}">
+             </div>
+              <div  class="col-md-8">
+                       {{ comment.comment_text}}
+              </div>
+         </div>
+         <div class="row">
+            <div id="comment-details">
+                <div class="col-md-4 col-md-offset-1">
+                    likes :)
+                </div>
+            </div>
+         </div>
+        </div>
+         
+     {% endfor %}
+      
+    </div>
+<section>
+{% endblock %}

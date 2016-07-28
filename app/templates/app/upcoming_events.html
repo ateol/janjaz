@@ -1,0 +1,146 @@
+{% extends 'app/index.html'%}
+{% load static %}
+
+{% block main %}
+ <section id="post-event" class="success">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                       <h3>Events in Turkey</h3>
+                       <p>Discover all the events organized in Turkey. Join one or create your own and invite expats. Post an event
+                        </p>
+                        <a href="{%url "create_event"%}" class="btn btn-lg btn-outline">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Create Event
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="success" id="events">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    Search By 
+                </div>
+                <div class="form-group">
+                      <form method="get" action="" class="form-horizontal">
+                          <div class="col-md-3 text-center">
+                            <select name="city" class="selectpicker select-btn" data-live-search="true" title="City">
+                            {% for k,v in city_choices%}
+                                  <option value="{{k}}">{{v}}</option>                                                                  
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select name="category" class="selectpicker" data-live-search="true" title="Event category">
+                            <option value="">Category</option>
+                            <option value="BUSINESS">Business</option>
+                            <option value="CULTURE_ART">Culture and Art</option>
+                            <option value="EDUCATION">Education</option>
+
+                            <option>Independence Celebrations</option>-->
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select name="date" class="selectpicker" data-live-search="true" title="Date">
+                            <option value="">Date</option>
+                            <option value="in-a-day">In a Day</option>
+                            <option value="in-a-week">In a Week</option>
+                            <option value="in-a-month">In a Month</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-lg">Ok</button>
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="success" id="upcoming">
+        <div class="container">  
+                 <!--  <h3>Upcoming Events</h3>  
+                       <div class="row">
+                        <h5>{{event.category}}</h5>
+                            <div class="col-md-3">
+                                <img class="img-responsive" src="{%static "app/img/page_background.png"%}"/>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="events-title">{{event.title}}</div>
+                                <p class="event-data">{{event.start_time}} - {{event.end_time}} <br> <i class="fa fa-map-marker"></i>{{event.city}}
+                                </p>
+                                <div>
+                                    <a href="{%url "upcoming_events"%}/{{event.id}}/" class="btn btn-default">Details</a>
+                                </div>
+                            </div> 
+                        </div> -->       
+            <div class="row">
+                <div class="col-md-7">
+                    <h3>Upcoming Events</h3>
+                </div>
+            </div>
+
+           {% for event in upcoming_events %}
+            <div class="row">
+                <!-- upcoming events section -->
+                    <div class="col-md-7">
+                        <div id="sr-column">
+                            <div class="row sr-data">
+                                <div class="col-md-12 e-upcoming">
+                                    <div class="col-md-6">
+                                        <div class="e-cat">{{event.category}}</div>
+                                        <img class="img-responsive" src="{%static "app/img/page_background.png"%}"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="events-title">{{event.title}}</div>
+                                        <p class="event-data">{{event.start_time}} - {{event.end_time}} <br> <i class="fa fa-map-marker"></i> {{event.city}}
+                                        </p>
+                                        <div>
+                                           <a href="{%url "upcoming_events"%}/{{event.id}}/" class="btn btn-default">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+             {% endfor %}
+             <div class="row">
+                 <h3>Search Results</h3>
+             </div>
+                    {% for object in final_list%}
+                        {% for event in object %}
+                          <div class="row">
+                            <div class="col-md-7">
+                                <div id="sr-column">
+                                    <div class="row sr-data">
+                                        <div class="col-md-12 e-upcoming">
+                                            <div class="col-md-6">
+                                                <div class="e-cat">{{event.category}}</div>
+                                                <img class="img-responsive" src="{%static "app/img/page_background.png"%}"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="events-title">{{event.title}}</div>
+                                                <p class="event-data">{{event.start_time}} - {{event.end_time}} <br> <i class="fa fa-map-marker"></i> {{event.city}}
+                                                </p>
+                                                <div>
+                                                <a href="{%url "upcoming_events"%}/{{event.id}}/" class="btn btn-default">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                        {% endfor %}
+                    {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

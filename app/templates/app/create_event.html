@@ -1,0 +1,59 @@
+{% extends 'app/index.html'%}
+{% load bootstrap3 %}
+{% load static %}
+{{ event_form.media }}
+
+{% block main %}
+   <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <!-- Bootstrap Core CSS -->
+       <link rel="stylesheet" href="{% static "app/content/bootstrap.min.css"%}"  type="text/css"/>
+
+
+        <script src="{% static "app/scripts/bootstrap.min.js"%}"></script>
+   </head>
+    {{ event_form.media }}
+<section id="create_event">
+    <div class="container">
+        <div class="row">
+             <div class="col-md-5">
+                  <form action="" method="post" enctype="multipart/form-data">
+                       {% csrf_token %}
+                       {% bootstrap_form event_form %}
+                
+                    <h3>More Details</h3>
+                    <div id="push_button" class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a id="advanced" role="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" href="#collapse1"><i class="fa fa-plus" aria-hidden="true"> Advanced</i></a>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse">
+                                   <div id="more_details">
+                                        {% csrf_token %}
+                                        <h4>Event's Website</h4>
+                                        {% bootstrap_form event_website_form %}
+                                        <h4>Organiser Details</h4>
+                                        {% bootstrap_form event_details_form %}
+                                   </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+             </div>
+             <div class="col-md-6 col-md-offset-1">
+                           <div id="disclaimer">
+                                <h3>Disclaimer</h3>
+                                <p>
+                                    This is the thing i needThis is the thing i needThis is the thing i needThis is the thing i need
+                                    This is the thing i needThis is the thing i needThis is the thing i needThis is the thing i need
+                                    This is the thing i needThis is the thing i needThis is the thing i needThis is the thing i need
+                                    This is the thing i needThis is the thing i needThis is the thing i need
+                                </p>
+                           </div>
+                    </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

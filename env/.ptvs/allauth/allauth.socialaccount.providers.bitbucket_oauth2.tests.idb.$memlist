@@ -1,0 +1,10 @@
+create_oauth2_tests
+registry
+patch
+mock
+unicode_literals
+BitbucketOAuth2Tests
+SocialAccount
+override_settings
+BitbucketOAuth2Provider
+MockedResponse
