@@ -1,0 +1,64 @@
+{% extends 'forums/base.html' %}
+{% block content %}
+<div class="container">
+   <div class="row">
+       <div class="col-md-3 col-md-offset-6">
+
+       </div>
+
+       <div  class="col-md-3">
+
+       </div>
+   </div>
+
+    <div class="row text-center">
+
+        <div class="col-md-9">
+
+             {% for category, forums in all_forums %}
+                 <a href="{% url "forums:forums_category" category.id%}"><h3>{{ category }}</h3></a>
+                <table class="table table-hover">
+                    <thead>
+                       <tr>
+                           <th>Forum</th>
+                           <th>Threads</th>
+                           <th>Posts</th>
+                           <th>Latest Posts</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                       {% for forum in forums %}
+                        <tr>
+                                <td><a href="{% url "forums:forums_forum" forum.id %}">{{ forum }}</a></td>
+                                <td>{{ forum.thread_count }}</td>
+                                <td>{{ forum.post_count }}</td>
+                                <td>{{ forum.last_post.thread.title }}</td>
+                        </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+          {% endfor %}
+        </div>
+
+
+           <div class="col-md-3">
+            <a class="list-group-item"><h5>Forums</h5></a>
+
+            <a class="list-group-item"><h5>Most Viewed Forums</h5></a>
+
+            <a class="list-group-item"><h5>Most Active Forums</h5></a>
+
+            <a class="list-group-item"><h5>Latest Threads</h5></a>
+
+            <a class="list-group-item"><h5>Most Viewed Threads</h5></a>
+
+            <a class="list-group-item"><h5>Most Active Threads</h5></a>
+
+            <a class="list-group-item"><h5>Most Active Members</h5></a>
+
+            <a class="list-group-item"><h5>Latest Posts</h5></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

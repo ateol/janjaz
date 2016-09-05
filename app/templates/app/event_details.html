@@ -3,7 +3,13 @@
 {% load static %}
 {% block main%}
 {% load disqus_tags %}
+{% set_disqus_developer 1 %}
+{% set_disqus_identifier object.id %}
+{% set_disqus_url object.get_absolute_url %}
+{% set_disqus_title object.headline %}
 {% disqus_dev %}
+
+
 <section>
     <div class="container">
         <!--<div class="row">

@@ -1,7 +1,0 @@
-OAuthTestsMixin
-registry
-MockedResponse
-TestCase
-EvernoteTests
-EvernoteProvider
-unicode_literals

@@ -1,0 +1,104 @@
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    margin: 0;
+    width: 100%;
+}
+
+.container-fluid {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width:100%;
+    max-width:none;
+    margin: 0;
+    }
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 15px;
+}
+
+.circle {
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+	-webkit-border-radius: 75px;
+	-moz-border-radius: 75px;
+	}
+
+#u-avatar {
+    background: url('http://www.dumpaday.com/wp-content/uploads/2016/05/funny-527.jpg') no-repeat center center;
+}    
+
+.u-box {
+    padding: 100px;
+}
+
+.u-info {
+    /*text-align: center;*/
+    padding-left: 15px;
+}
+
+.tabs {
+    padding-left: 50px;
+}
+
+#home {
+    border: 1px solid #e6e6e6;
+    background: #ffffff;
+    margin-top: 30px;
+    padding: 48px 20px 48px 0;
+}
+
+.dark-bg {
+    background: #bdccd4;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+    padding-left: 50px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.u-bg {
+    background: #f2f9f9 !important;
+}
+
+.btn-default {
+    background: #de6840;
+    color: white;
+}
+
+/* start of forum profile css */
+#f-avatar {
+    background: url('../images/img/alex-profile.JPG') no-repeat center center;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+}
+
+.threadWrapper {
+    border: 2px solid red;
+}
+
+#fbody {
+    background: #f0f0f0;
+}
+f-title {
+    
+}

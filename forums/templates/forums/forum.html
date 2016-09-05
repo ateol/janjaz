@@ -1,0 +1,35 @@
+{% extends "forums/base.html" %}
+{% block content %}
+    <div class="container">
+       <div class="row">
+           <div class="col-md-3 col-md-offset-9">
+               {% if can_create_thread %}
+                    <a class="btn btn-block btn-default" href="{% url "forums:forums_post_create"  forum.id%}">Create Post</a>
+               {% endif %}
+           </div>
+       </div>
+       <div class="row text-center">
+           <h3>{{ forum }}</h3>
+           <div class="col-md-12">
+               <table class="table table-hover">
+                <thead>
+                   <tr>
+                       <th>Threads</th>
+                       <th>Views</th>
+                       <th>Replies</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   {% for thread, replies in thread_replies %}
+                    <tr>
+                            <td><a href="{% url "forums:forums_thread" thread.id %}">{{ thread }}</a></td>
+                            <td>{{ thread.view_count }}</td>
+                            <td>{{ thread.reply_count }}</td>
+                    </tr>
+                   {% endfor %}
+                </tbody>
+            </table>
+           </div>
+       </div>
+    </div>
+{% endblock %}

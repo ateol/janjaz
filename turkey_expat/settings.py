@@ -30,14 +30,13 @@ DATABASES = {
 
 LOGIN_URL = '/login'
 
-"""
+
 HAYSTACK_CONNECTIONS = {
     'default': {
-        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
-        'URL': 'http://127.0.0.1:9200/',
-        'INDEX_NAME': 'haystack',
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': path.join(path.dirname(__file__), 'whoosh_index'),
     },
-}"""
+}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -84,9 +83,11 @@ STATIC_ROOT = path.join(PROJECT_ROOT, 'static').replace('\\', '/')
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     path.join(PROJECT_ROOT, 'app', 'static'),
+    path.join(PROJECT_ROOT, 'forums', 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -123,6 +124,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             path.join(PROJECT_ROOT,'app' ,'templates'),
+            path.join(PROJECT_ROOT, 'forums', 'templates')
         ],
         'OPTIONS': {
             'debug': DEBUG,
@@ -157,6 +159,10 @@ INSTALLED_APPS = (
     'app',
     'bootstrap3',
     'disqus',
+    'haystack',
+    'whoosh',
+    'forums',
+    'blog',
     
     'allauth',
     'allauth.account',
@@ -171,8 +177,8 @@ INSTALLED_APPS = (
 )
 
 
-DISQUS_API_KEY = 'G8jdxvv2BlM2rTHynPfkJxPkp7GVjwtmakzGBvbwmeeMW8N1WbTZddNuTPmIkebc'
-DISQUS_WEBSITE_SHORTNAME = 'Janjaz'
+DISQUS_API_KEY =  'NrLwut1WtqXvCvmY2TKJpJGxJBzOJqmoaMofLhF3Nodn6XiMuhpxCuBbnqZqd3T4'
+DISQUS_WEBSITE_SHORTNAME = 'foobar'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

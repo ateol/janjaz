@@ -5,10 +5,9 @@ from django.utils import timezone
 import datetime
 from django.shortcuts import render
 from django.http import HttpRequest, request, HttpResponse , HttpResponseRedirect
-from django.shortcuts import render
-from django.contrib.auth.models import User
-from app.forms import UserProfileForm, EventForm, EventWebsiteForm, EventDetailsForm, EventCommentForm
-from app.models import UserProfile, Event, City, EventWebsite, EventDetails, EventComment, University
+from django.contrib.auth.models import  User
+from app.forms import UserProfileForm, EventForm, EventWebsiteForm, EventDetailsForm
+from app.models import Event, City, EventWebsite, EventDetails,  University, UserProfile
 from django.contrib.auth.decorators import login_required
 
 def home(request):
@@ -17,12 +16,52 @@ def home(request):
     context['user']=user
     return render(request, 'app/index.html', context)
 
-
 def login(request):
     return HttpResponseRedirect('accounts/login')
 
 def SignUp(request):
     return HttpResponseRedirect('accounts/signup')
+
+def main_user_profile(request):
+    current_user=request.user
+    current_profile=UserProfile.objects.get(user=current_user)
+
+    fullname=str(current_profile.firstName)+" "+current_profile.lastName
+    username=current_profile.user.username
+    city=current_profile.city_living
+    date_joined=current_profile.date_joined
+    origin=current_profile.country_of_origin
+    occupation=current_profile.occupation
+    gender=current_profile.gender
+    interests=current_profile.interests.split(',')
+    marital_status=current_profile.status
+    spoken_languages=current_profile.languages.split(',')
+    about_me=current_profile.about_yourself
+
+
+    for j in range(len(spoken_languages)):
+        spoken_languages[j]=spoken_languages[j].strip(' ').capitalize()
+
+    for j in range(len(interests)):
+        interests[j]=interests[j].strip(' ').capitalize()
+
+    context={
+        'fullname': fullname,
+        'username': username.capitalize(),
+        'city': city.capitalize(),
+        'date_joined': date_joined.strftime("%B %d, %Y"),
+        'origin': origin.capitalize(),
+        'occupation':occupation.capitalize(),
+        'gender': gender.capitalize(),
+        'interests': interests,
+        'marital_status': marital_status.capitalize(),
+        'spoken_languages': spoken_languages,
+        'about_me': about_me
+    }
+
+    print(context)
+
+    return render(request, 'app/usrProfile.html', context )
 
 @login_required
 def SignOut(request):
@@ -46,7 +85,7 @@ def Profile(request):
         if user_profile_form.is_valid():
             user_profile=user_profile_form.save()
             if not current_user:
-                HttpResponserRedirect('/login')
+                HttpResponseRedirect('/login')
             else:
                 if current_user in all_users:
                     current_profile=UserProfile.objects.get(user=current_user)
@@ -60,7 +99,8 @@ def Profile(request):
                     user_profile.user=current_user           
                     if 'profile_picture' in request.FILES:
                         user_profile.profile_picture=request.FILES['profile_picture']
-                    
+
+                    user_profile.date_joined=timezone.now()
                     user_profile.save()
             return HttpResponseRedirect('/user_profile')
         else:
@@ -176,9 +216,9 @@ def EventDetails(request,event_id):
     current_profile=UserProfile.objects.get(user=current_user)
     context['event']=current_event
 
-    if request.method=="POST":
+    """if request.method=="POST":
         event_comment_form=EventCommentForm(request.POST)
-        
+
         if event_comment_form.is_valid():
             event_comment=event_comment_form.save()
             event_comment.author=current_user
@@ -198,10 +238,10 @@ def EventDetails(request,event_id):
     if current_event.comments.all().exists():
         all_comments=current_event.comments.order_by("-id")
         comment_count=all_comments.count()
-    
+
     context['comment_count']=comment_count
     context['all_comments']=all_comments
-    context['event_comment_form']=event_comment_form
+    context['event_comment_form']=event_comment_form"""
 
     return render(request, 'app/event_details.html', context)
 

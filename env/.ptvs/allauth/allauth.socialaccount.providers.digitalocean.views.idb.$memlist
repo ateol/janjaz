@@ -1,9 +1,0 @@
-oauth2_login
-DigitalOceanProvider
-requests
-app_settings
-OAuth2Adapter
-oauth2_callback
-OAuth2LoginView
-DigitalOceanOAuth2Adapter
-OAuth2CallbackView

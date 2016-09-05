@@ -1,7 +1,9 @@
 ﻿from django import forms
 from django.contrib.auth.models import User
-from app.models import UserProfile, City, Event, EventWebsite , EventDetails, EventComment
+from app.models import City, Event, EventWebsite , EventDetails
+from .models import UserProfile as Profile
 from datetimewidget.widgets import DateTimeWidget
+from app.models import City
 
 class UserProfileForm(forms.ModelForm):
    
@@ -20,12 +22,17 @@ class UserProfileForm(forms.ModelForm):
             ('MADAGASCAR','Madagascar'),
             )
 
-        city_living_choices=()
-
-        for city in City.objects.all():
-            item=((city.name.upper(),)+(city.name,),)
-            city_living_choices+=item
-            item=()
+        city_living_choices=(
+            ('ANKARA', 'Ankara'),
+            ('ISTANBUL', 'Istanbul'),
+            ('KONYA', 'Konya'),
+        )
+        """if  City.objects.all()[0]:
+            for city in City.objects.all():
+                item = ((city.name.upper(),) + (city.name,),)
+                city_living_choices += item
+                item = ()
+        """
 
         status_choices=(
             ('SINGLE', 'Single'),
@@ -48,8 +55,8 @@ class UserProfileForm(forms.ModelForm):
             ('TRAINEE', 'Trainee'),
             )
 
-        model=UserProfile
-        fields=['living_in_turkey', 'country_of_origin', 'city_living', 'profile_picture',
+        model=Profile
+        fields=['living_in_turkey','firstName', 'lastName', 'country_of_origin', 'city_living', 'profile_picture',
                 'gender', 'status', 'about_yourself','interests', 'languages', 'occupation',
                 ]
         widgets={
@@ -74,12 +81,17 @@ class EventForm(forms.ModelForm):
             ('EDUCATION', 'Education')
         )
 
-        city_choices=()
+        city_choices = (
+            ('ANKARA', 'Ankara'),
+            ('ISTANBUL', 'Istanbul'),
+            ('KONYA', 'Konya'),
+        )
 
-        for city in City.objects.all():
-            item=((city.name.upper(),)+(city.name,),)
-            city_choices+=item
-            item=()
+        """if City.objects.all()[0]:
+            for city in City.objects.all():
+                item = ((city.name.upper(),) + (city.name,),)
+                city_choices += item
+                item = ()"""
         
         event_privacy_choices=(
             ('PUBLIC_EVENT', 'Public Event'),
@@ -114,7 +126,7 @@ class EventDetailsForm(forms.ModelForm):
             'address': forms.Textarea(attrs={'rows': 5})
         }
 
-class EventCommentForm(forms.ModelForm):
+"""class EventCommentForm(forms.ModelForm):
      
      class Meta:
          model=EventComment
@@ -122,4 +134,4 @@ class EventCommentForm(forms.ModelForm):
          
          widgets={
              'comment_text': forms.Textarea(attrs={'rows': 5}),
-         }
+         }"""

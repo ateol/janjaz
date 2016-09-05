@@ -1,0 +1,125 @@
+{% extends 'app/index.html' %}
+{% block main %}
+<section>
+  <div class="container u-bg">
+    <div class="row u-box">
+      <div class="col-md-3 col-md-offset-1">
+        <div class="row u-info">
+            <div class="circle" id="u-avatar">
+        </div>
+          <h3>{{ fullname }}</h3>
+          <h5>{{ username }}</h5>
+          <hr />
+          <a href=""><p> <span style="color: orange;"><i class="fa fa-map-marker" aria-hidden="true"></i></span> {{ city }}</p></a>
+          <p>Joined:{{ date_joined }} </p>
+          <hr />
+          <p>{{ origin }}</p>
+        </div>
+      </div>
+      <div class="tabs col-md-8 col-xs-12">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#home">General Information</a></li>
+          <li><a data-toggle="tab" href="#cv">My CV</a></li>
+          <li id="edit" class="pull-left">
+            <a href="/" class="btn btn-default btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i> Edit Profile</a>
+          </li>
+        </ul>
+  
+        <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="dark-bg">Occupation</p>
+            </div>
+            <div class="col-sm-1 colon">
+              <p>:</p>
+            </div>
+            <div class="col-sm-5 col-xs-12 u-data">
+              <p>{{ occupation }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="dark-bg">Gender</p>
+            </div>
+            <div class="col-sm-1 colon">
+              <p>:</p>
+            </div>
+            <div class="col-sm-5 col-xs-12 u-data">
+              <p>{{ gender }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="dark-bg">Interests</p>
+              <dl>
+                <dt>
+                  <dd>
+                    <ul style="padding-left: 85px;">
+                      {% for interest in interests %}
+                          <li>{{ interest }}</li>
+                        {%  endfor %}
+                    </ul>
+                  </dd>
+                </dt>
+              </dl>
+            </div>
+            <div class="col-sm-1">
+              <p></p>
+            </div>
+            <div class="col-sm-5">
+              <p></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="dark-bg">Marital Status</p>
+            </div>
+            <div class="col-sm-1 colon">
+              <p>:</p>
+            </div>
+            <div class="col-sm-5 col-xs-12 u-data">
+              <p>{{ marital_status }}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="dark-bg">Spoken Languages</p>
+            </div>
+            <div class="col-sm-1 colon">
+              <p>:</p>
+            </div>
+            <div class="col-sm-5 col-xs-12 u-data">
+              {% for language in spoken_languages %}
+                  <span>{{ language }}</span>
+                {% endfor %}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <header class="dark-bg">About Me</header>
+                    </div>
+                </div>
+              <p style="padding: 30px 20px 30px 80px;">
+                {{ about_me }}
+              </p>
+            </div>
+          </div>
+        </div> 
+
+        <div id="cv" class="tab-pane fade">
+          <p>Comming soon...</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "forums/base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <div class="container">
+       <div class="row">
+           <div class="col-md-8 col-md-offset-2">
+               <form method="post" action="" >
+                   {% csrf_token %}
+                   {% bootstrap_form form %}
+                   <input role="buton" class="btn btn-success" type="submit">
+               </form>
+           </div>
+       </div>
+    </div>
+{% endblock %}

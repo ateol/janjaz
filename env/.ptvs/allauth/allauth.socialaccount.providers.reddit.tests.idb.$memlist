@@ -1,6 +1,0 @@
-create_oauth2_tests
-RedditProvider
-unicode_literals
-MockedResponse
-RedditTests
-registry
