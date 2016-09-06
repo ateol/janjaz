@@ -1,8 +1,12 @@
 *.pyc
 __pycache__
 myvenv
-/static
-wenv
+<<<<<<< HEAD
 venv
 db.sqlite3
+/static
+=======
+wenv
+venv
 *.pyc
+>>>>>>> 36ba8c68108893f50206cd1e516d66305ca8e2cc

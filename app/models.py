@@ -82,6 +82,11 @@ class Event(models.Model):
     event_website=models.OneToOneField(EventWebsite,null=True)
     event_organizer=models.OneToOneField(EventDetails, null=True)
 
+    likes=models.PositiveIntegerField()
+
+    def total_likes(self):
+        return self.likes.count()
+
     def __str__(self):
         return self.title
 
