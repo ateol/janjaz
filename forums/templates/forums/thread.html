@@ -3,6 +3,12 @@
 
 {% block content %}
 <div class="container">
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h1 id="f-title">Forum Title</h1>
+        </div>
+      </div>
      <div class="row">
          <div class="col-md-3 col-md-offset-9">
              <a role="button" class="btn btn-block btn-default" href="{% url "forums:forums_reply_create" thread.id %}">New Reply</a>
@@ -13,26 +19,57 @@
             <h3>{{ thread }}</h3>
         </div>
     </div>
+   
+   {% for post in posts %}
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="threadWrapper">
+            <div class="col-md-3 text-center">
+              <div class="circle" id="f-avatar">
+              </div>
+              <div class="fu-info">
+                <p><a href=""><strong>{{ member }}</strong></a></p>
+                <p>joined</p>
+                <p>origin</p>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <p>
+                  {{ post.content }}
+              </p>
+              
+              <p class="likes">
+                
+                <span>0 </span>
 
-    <div class="row">
-        <div  class="col-md-10 col-md-offset-1">
-            <ul class="list-group">
-                {% for post in posts %}
-                    <h4>{{ member }}</h4>
-                    <li class="list-group-item">{{ post.content }}</li>
-               {% endfor %}
-            </ul>
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
+                  </span>
+
+                  <span style="padding-left: 20px;" class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+                  </span>
+
+              </p>
+
+            </div>
+          </div>
         </div>
-    </div>
-
+       </div>
+    {% endfor %}
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-           <form method="post" action="">
+           {% if reply_form%}
+             <form method="post" action="">
                {% csrf_token %}
                {% bootstrap_form reply_form %}
                <input type="submit" role="button" class="btn btn-success">
-           </form>
+             </form>
+           {% endif %}
         </div>
     </div>
 </div>
 {% endblock %}
+

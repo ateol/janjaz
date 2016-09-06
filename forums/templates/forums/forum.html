@@ -1,8 +1,8 @@
 {% extends "forums/base.html" %}
 {% block content %}
-    <div class="container">
+    <div class="container f-wrapper">
        <div class="row">
-           <div class="col-md-3 col-md-offset-9">
+           <div class="col-md-3 col-md-offset-9" style="padding-bottom: 30px;">
                {% if can_create_thread %}
                     <a class="btn btn-block btn-default" href="{% url "forums:forums_post_create"  forum.id%}">Create Post</a>
                {% endif %}
@@ -10,9 +10,9 @@
        </div>
        <div class="row text-center">
            <h3>{{ forum }}</h3>
-           <div class="col-md-12">
+           <div class="col-md-8 col-md-offset-2" style="padding-top: 30px;">
                <table class="table table-hover">
-                <thead>
+                <thead class="thead-inverse">
                    <tr>
                        <th>Threads</th>
                        <th>Views</th>
@@ -33,3 +33,5 @@
        </div>
     </div>
 {% endblock %}
+
+

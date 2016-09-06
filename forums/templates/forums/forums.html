@@ -1,22 +1,10 @@
 {% extends 'forums/base.html' %}
 {% block content %}
-<div class="container">
-   <div class="row">
-       <div class="col-md-3 col-md-offset-6">
-
-       </div>
-
-       <div  class="col-md-3">
-
-       </div>
-   </div>
-
-    <div class="row text-center">
-
-        <div class="col-md-9">
-
+<div class="container f-body">
+    <div class="row text-center content-wrapper">
+        <div class="col-md-10 f-wrapper">
              {% for category, forums in all_forums %}
-                 <a href="{% url "forums:forums_category" category.id%}"><h3>{{ category }}</h3></a>
+                 <a href="{% url "forums:forums_category" category.id%}"><h2>{{ category }}</h2></a>
                 <table class="table table-hover">
                     <thead>
                        <tr>
@@ -37,11 +25,11 @@
                        {% endfor %}
                     </tbody>
                 </table>
-          {% endfor %}
+                {% endfor %}
         </div>
 
 
-           <div class="col-md-3">
+           <div class="col-md-2 side-list">
             <a class="list-group-item"><h5>Forums</h5></a>
 
             <a class="list-group-item"><h5>Most Viewed Forums</h5></a>

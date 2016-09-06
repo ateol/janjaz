@@ -1,6 +1,9 @@
+{% load static %}
+
 <html>
     <head>
       <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link  rel="stylesheet" href="{% static "app/custom_css/new_custom.css"%} " type="text/css"/>
     </head>
     <body>
     <nav class="navbar navbar-default">
@@ -15,10 +18,10 @@
           <li><a href="#">Search</a></li>
         </ul>
       </div>
-
+</nav>
         {% block content %}
         {% endblock %}
-    </nav>
+    
       <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 
     <script rel="script" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
