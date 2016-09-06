@@ -152,7 +152,14 @@ p {
 .tc-report {
     color: red;
 }
+
+.btn-thread {
+    float: right;
+    padding-right: 5px;
+    margin-top: 10px;
+}
 /* end of forum profile css */
+
 /* Forum css */
 
 .content-wrapper {
@@ -167,8 +174,8 @@ p {
     background: #f0f0f0;
 }
 
-.f-body {
-    background-color: #f8f8f8;
+.fbody {
+    background-color: #f0f0f0;;
 }
 
 table {

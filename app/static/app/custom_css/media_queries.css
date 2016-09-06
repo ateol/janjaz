@@ -1,0 +1,137 @@
+
+
+/* usrProfile media queries */
+@media only screen and (max-width: 615px) {
+    #edit {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .u-info {
+        text-align: center;
+    }
+    .circle {
+        display: table;
+        margin: 0 auto;
+    }
+    .tabs {
+        padding-top: 60px;
+    }
+    .colon {
+        display:none;
+    }
+
+    .dark-bg p{
+        text-align: justify;
+    }
+
+    .u-data p{
+        text-align: left;
+        padding-left: 60px;
+    }
+    .u-data span {
+        text-align: left;
+        padding-left: 60px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .tabs {
+        padding-top: 60px;
+    }
+    .u-info {
+        text-align: center;
+    }
+    .circle {
+        display: table;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+/* end of usrProfile media queries */
+
+/* Media queries for thread */
+
+@media only screen and (max-width: 480px) {
+    #f-avatar {
+        margin: 0 auto;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        display: block;
+    }
+
+    .threadWrapper {
+        min-width: 100%;
+        height: auto;
+    }
+    .fu-info {
+        text-align: center;
+    }
+
+    .likes {
+        float: right;
+        font-size: 12px;
+    }
+
+    .p-style {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 481px) {
+
+    #f-avatar {
+        display: block;
+        margin: 0;
+    }
+
+    .threadWrapper {
+        min-width: 100%;
+        padding-top: 20px;
+    }
+    
+    .likes {
+        font-size : 12px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #f-avatar {
+        display: block;
+        margin: 0;
+    }
+
+    .likes {
+        font-size: 12px;
+    }
+    .p-style {
+        margin-bottom: 40px;
+    }
+    
+}
+
+@media only screen and (min-width: 992px) {
+
+    .threadWrapper {
+        min-width: 925px;
+        max-width: 925px;
+        display: table;
+        margin: 10px auto;
+    }
+
+    #btn-thread-up {
+        margin-top: 130px;
+    }
+
+    .btn-thread {
+        display: block;
+        margin: 10px auto;
+    }
+}
