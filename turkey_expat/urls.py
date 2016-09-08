@@ -11,6 +11,7 @@ from turkey_expat import settings
 urlpatterns=[     
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^likes/', include('likes.urls')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^forum/', include('forums.urls', namespace='forums')),
     url(r'^blog/', include('blog.urls',namespace='blog')),

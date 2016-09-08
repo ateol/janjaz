@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
 from django.utils import timezone
 from time import time
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
+
+
 
 def profile_picture_destination(instance, filename):
     return "profile_pictures/%s_%s"%(str(time()).replace('.','_'), filename)
@@ -33,7 +37,8 @@ class UserProfile(models.Model):
     country_of_origin=models.CharField(max_length=50)
     city_living=models.CharField(max_length=50)
     date_joined=models.DateTimeField(blank=False ,null=True)
-    profile_picture=models.FileField(upload_to=profile_picture_destination, null=True)
+    profile_picture=models.ImageField(upload_to=profile_picture_destination,
+                                      null=True)
 
     gender=models.CharField(max_length=6)
     status=models.CharField(max_length=50, blank=True)
@@ -82,7 +87,7 @@ class Event(models.Model):
     event_website=models.OneToOneField(EventWebsite,null=True)
     event_organizer=models.OneToOneField(EventDetails, null=True)
 
-    likes=models.PositiveIntegerField()
+    likes=models.PositiveIntegerField(default=0)
 
     def total_likes(self):
         return self.likes.count()
@@ -117,7 +122,7 @@ class University(models.Model):
 class ProminentPlace(models.Model):
     city=models.ForeignKey(City)
     title=models.CharField(max_length=50)
-    Image=models.ImageField(upload_to=prominent_place_picture_destination, blank=True)
+    image=models.ImageField(upload_to=prominent_place_picture_destination, null=True, blank=True)
     description=models.TextField()
 
     def __str__(self):
@@ -141,6 +146,7 @@ class Job(models.Model):
     def __str__(self):
         return self.title
 
-
+import secretballot
+secretballot.enable_voting_on(Event)
 
 

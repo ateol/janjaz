@@ -8,31 +8,11 @@
 {% set_disqus_url object.get_absolute_url %}
 {% set_disqus_title object.headline %}
 {% disqus_dev %}
+{% load likes_inclusion_tags %}
 
 
 <section>
     <div class="container">
-        <!--<div class="row">
-            <h4>Title:</h4>
-           {{event.title}}
-           <h4>City: </h4>
-            {{event.city}}
-           <h4>Category: </h4>
-           {{event.category}}ßß
-           <h4>Description: </h4>
-           {{event.description}}
-           <h4>Event Venue</h4>
-           {{event.event_venue}}
-           <h4>Start Time:</h4>
-           {{event.start_time}}
-           <h4>End Time: </h4>
-           {{event.end_time}}
-           <h4>Event's Website</h4>
-           {{event.event_website.event_website}}
-           <h4>#Comments</h4>
-           {{ comment_count }}
-        </div>-->
-
 <!-------------------------------------------------------------------------------------------------------------->
 
         <div class="row">
@@ -63,6 +43,8 @@
                 <div class="col-md-8 result-resize">
                     <p>
                        {{event.description}}
+
+                        {% likes event %}
                     </p>
                 </div>
             </div>
@@ -84,9 +66,12 @@
                 </div>    
             </div>
 
+
 <!-------------------------------------------------------------------------------------------------------------->
   
   {% disqus_show_comments %}
+
+    {% comment %}
    <div class="row">
         <div class="col-md-8 col-md-offset-2">
                <form action="" , method="post">
@@ -123,9 +108,9 @@
             </div>
          </div>
         </div>
-         
+
      {% endfor %}
-      
+     {%  endcomment %}
     </div>
 <section>
 {% endblock %}
