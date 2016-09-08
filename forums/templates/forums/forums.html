@@ -4,7 +4,7 @@
     <div class="row text-center content-wrapper">
         <div class="col-md-10 f-wrapper">
              {% for category, forums in all_forums %}
-                 <a href="{% url "forums:forums_category" category.id%}"><h2>{{ category }}</h2></a>
+                 <h2><a href="{% url "forums:forums_category" category.id%}">{{ category }}</h2>
                 <table class="table table-hover">
                     <thead>
                        <tr>
@@ -29,22 +29,22 @@
         </div>
 
 
-           <div class="col-md-2 side-list">
-            <a class="list-group-item"><h5>Forums</h5></a>
+           <div class="col-md-2 side-list">  
+            <a class="list-group-item" href="#"><h5>Forums</h5></a>
 
-            <a class="list-group-item"><h5>Most Viewed Forums</h5></a>
+            <a class="list-group-item" href="#"><h5>Most Viewed Forums</h5></a>
 
-            <a class="list-group-item"><h5>Most Active Forums</h5></a>
+            <a class="list-group-item" href="#"><h5>Most Active Forums</h5></a>
 
-            <a class="list-group-item"><h5>Latest Threads</h5></a>
+            <a class="list-group-item" href="#"><h5>Latest Threads</h5></a>
 
-            <a class="list-group-item"><h5>Most Viewed Threads</h5></a>
+            <a class="list-group-item" href="#"><h5>Most Viewed Threads</h5></a>
 
-            <a class="list-group-item"><h5>Most Active Threads</h5></a>
+            <a class="list-group-item" href="#"><h5>Most Active Threads</h5></a>
 
-            <a class="list-group-item"><h5>Most Active Members</h5></a>
+            <a class="list-group-item" href="#"><h5>Most Active Members</h5></a>
 
-            <a class="list-group-item"><h5>Latest Posts</h5></a>
+            <a class="list-group-item" href="#"><h5>Latest Posts</h5></a>
         </div>
     </div>
 </div>

@@ -1,40 +1,31 @@
-{% extends 'forums/base.html' %}
-{% load bootstrap3 %}
-
-{% block content %}
+{% extends "forums/base.html "%}
+{%block content %}
 <div class="container">
-
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h1 id="f-title">Forum Title</h1>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+          <h1 id="f-title">{{ thread }}</h1>
+        </div>
+        <!-- thread button -->
+        <div class="col-md-2 btn-thread " id="btn-thread-up">
+          <a role="button" href="{% url "forums:forums_reply_create" thread.id %}" class="btn btn-primary">New thread</a>
         </div>
       </div>
-     <div class="row">
-         <div class="col-md-3 col-md-offset-9">
-             <a role="button" class="btn btn-block btn-default" href="{% url "forums:forums_reply_create" thread.id %}">New Reply</a>
-         </div>
-     </div>
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <h3>{{ thread }}</h3>
-        </div>
-    </div>
-   
-   {% for post in posts %}
+      <!-- column box -->
+      {% for post in posts %}
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <div class="threadWrapper">
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 u-info-wrapper">
               <div class="circle" id="f-avatar">
               </div>
               <div class="fu-info">
-                <p><a href=""><strong>{{ member }}</strong></a></p>
-                <p>joined</p>
-                <p>origin</p>
+                <p><a href=""><strong>{{ post.author }}</strong></a></p>
+                <p>{{post.author.date_joined}}</p>
+                <p>{{ post.author.country_of_origin }}</p>
               </div>
             </div>
-            <div class="col-md-7">
-              <p>
+            <div class="col-md-8">
+              <p class="p-style">
                   {{ post.content }}
               </p>
               
@@ -57,19 +48,11 @@
             </div>
           </div>
         </div>
-       </div>
-    {% endfor %}
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-           {% if reply_form%}
-             <form method="post" action="">
-               {% csrf_token %}
-               {% bootstrap_form reply_form %}
-               <input type="submit" role="button" class="btn btn-success">
-             </form>
-           {% endif %}
+      </div>
+      {% endfor %}
+      <div class="row">
+        <div class="col-md-2 btn-thread">
+          <a role="button" href="{% url "forums:forums_reply_create" thread.id %}" class="btn btn-primary">New thread</a>
         </div>
-    </div>
-</div>
+      </div>
 {% endblock %}
-
