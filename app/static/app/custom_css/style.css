@@ -5,7 +5,7 @@
     height: 48px;
 }
 
-/* styling the nav bar */
+/* styling the nav bar 
 .navbar-nav > li > .dropdown-menu {
     background-color: #283f55;
     border-bottom: 8px solid #ea8d15;
@@ -30,7 +30,7 @@
 
 .navbar-default .navbar-nav>li>a:focus  {
     color: #cc7200 !important;
-}
+} */
 
 /* header 1 css */
 #header1 {
@@ -127,16 +127,6 @@
     color: #fff;
     font-size: 16px;
     border: 1px solid #b8c8c9;
-}
-
-.navbar-default .navbar-nav >li>a:hover {
-    color: #ff8f00 !important;
-}
-
-.btn-success.active, .btn-success:active, .btn-success:focus, .btn-success:hover, .open .dropdown-toggle.btn-success {
-    border-color: #ff8f00 !important;
-    -webkit-border-color: #ff8f00 !important;
-    -moz-border-color: #ff8f00 !important;
 }
 
 .success .events-title {
