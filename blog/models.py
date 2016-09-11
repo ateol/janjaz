@@ -117,6 +117,7 @@ class Post(models.Model):
         if self.description:
             return self.description
         else:
+
             return strip_tags(self.teaser_html)
 
     @property

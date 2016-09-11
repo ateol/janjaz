@@ -13,7 +13,7 @@ $(document).ready(function(){
 
         var request=$.ajax({
 
-            url: '/forum/likes/',
+            url: '/forum/flag/',
             method: 'POST',
             data: {post_id: post_id,
                 post_kind: post_kind,
@@ -30,9 +30,14 @@ $(document).ready(function(){
         });
 
         request.done(function(msg){
-            parent.find("#flag-div").html(msg);
-            var color=parent.find("#flags").attr('class');
-            parent.find("#flag-circle").css('color', color);
+            if(msg==="already_flagged")
+            {
+                alert("Already flagged")
+            }else{
+                parent.find("#flag-div").html(msg);
+                var color=parent.find("#flags").attr('class');
+                parent.find("#flag-circle").css('color', color);
+            }
         });
 
         request.fail(function(jqXHR, textStatus){

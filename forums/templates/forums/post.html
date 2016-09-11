@@ -1,30 +1,63 @@
-<div class="threadWrapper post-div">
-<div class="col-md-3 u-info-wrapper">
-  <div class="circle" id="f-avatar">
-  </div>
-  <div class="fu-info">
-    <p><a href=""><strong>{{ post.author }}</strong></a></p>
-    <p>{{post.author.date_joined}}</p>
-    <p>{{ post.author.country_of_origin }}</p>
-  </div>
-</div>
-<div class="col-md-8">
-  <p style="text-align: left" class="p-style">
-      {{ post.content }}
-  </p>
+{% if post.kind == "reply" %}
+    <div class="threadWrapper post-div">
+    <div class="col-md-3 u-info-wrapper">
+      <div class="circle" id="f-avatar">
+      </div>
+      <div class="fu-info">
+        <p><a href=""><strong>{{ post.author }}</strong></a></p>
+        <p>{{post.author.date_joined}}</p>
+        <p>{{ post.author.country_of_origin }}</p>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <p style="text-align: left" class="p-style">
+          {{ post.content }}
+          <a href="{% url "forums:forums_post_edit" post.kind post.id %}" style="font-size: 18px; color: navajowhite"><i class="fa fa-pencil-square-o" aria-hidden="true">edit</i></a>
+      </p>
+      <p class="likes">
+            <span id="like-div">{% include 'forums/likes.html' %}</span>
+            <span data-kind="{{ post.kind }}" data-id="{{ post.id }}" class="fa-stack fa-lg like-button">
+            <i id="like-circle" style="color: {{ post.like_color }}" class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
+            </span>
 
-  <p class="likes">
-        <span id="like-div">{% include 'forums/likes.html' %}</span>
-        <span data-kind="{{ post.kind }}" data-id="{{ post.id }}" class="fa-stack fa-lg like-button">
-        <i id="like-circle" style="color: {{ post.like_color }}" class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-        </span>
+            <span id="flag-div">{% include "forums/flag.html" %}</span>
+            <span data-kind="{{ post.kind }}"  data-id="{{ post.id }}" style="padding-left: 20px;" class="flag-button fa-stack fa-lg">
+            <i id="flag-circle" style="color: {{ post.flag_color }}" class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+            </span>
+      </p>
+    </div>
+    </div>
+{% else %}
+    <div style="background-color: whitesmoke" class="threadWrapper post-div">
+    <div class="col-md-3 u-info-wrapper">
+      <div class="circle" id="f-avatar">
+      </div>
+      <div class="fu-info">
+        <p><a href=""><strong>{{ post.author }}</strong></a></p>
+        <p>{{post.author.date_joined}}</p>
+        <p>{{ post.author.country_of_origin }}</p>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <p style="text-align: left" class="p-style">
+          {{ post.content }}
+          <a href="{% url "forums:forums_post_edit" post.kind post.id %}" style="font-size: 18px; color: navajowhite"><i class="fa fa-pencil-square-o" aria-hidden="true">edit</i></a>
+      </p>
+      <p class="likes">
+            <span id="like-div">{% include 'forums/likes.html' %}</span>
+            <span data-kind="{{ post.kind }}" data-id="{{ post.id }}" class="fa-stack fa-lg like-button">
+            <i id="like-circle" style="color: {{ post.like_color }}" class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
+            </span>
 
-        <span id="flag-div">{% include "forums/flag.html" %}</span>
-        <span data-kind="{{ post.kind }}"  data-id="{{ post.id }}" style="padding-left: 20px;" class="flag-button fa-stack fa-lg">
-        <i  class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
-        </span>
-  </p>
-</div>
-</div>
+            <span id="flag-div">{% include "forums/flag.html" %}</span>
+            <span data-kind="{{ post.kind }}"  data-id="{{ post.id }}" style="padding-left: 20px;" class="flag-button fa-stack fa-lg">
+            <i id="flag-circle" style="color: {{ post.flag_color }}" class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+            </span>
+      </p>
+    </div>
+    </div>
+{% endif %}

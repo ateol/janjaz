@@ -254,8 +254,7 @@ class ForumPost(models.Model):
     # allow editing for short period after posting
     def editable(self, user):
         if user == self.author:
-            if timezone.now() < self.created + datetime.timedelta(**settings.FORUMS_EDIT_TIMEOUT):
-                return True
+            return True
         return False
 
 

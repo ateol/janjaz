@@ -1,5 +1,9 @@
 {% if post %}
-   <span id="flags" class="{{ post.flag_color }}">{{ flagging }}</span>
+    {% if post.flagged %}
+        <span style="color: red" id="flags" class="{{ post.flag_color }}">flagged</span>
+    {% else %}
+        <span id="flags" class="{{ post.flag_color }}"></span>
+    {% endif %}
 {% else %}
     <span>0</span>
 {% endif %}

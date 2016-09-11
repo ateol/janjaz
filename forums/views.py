@@ -296,19 +296,21 @@ def post_edit(request, post_kind, post_id):
         form_class = ReplyForm
     else:
         raise Http404()
+        print("not found")
 
     if not post.editable(request.user):
+        print("not editable")
         raise Http404()
 
     if request.method == "POST":
         form = form_class(request.POST, instance=post, no_subscribe=True)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse("forum:forums_thread", args=[thread_id]))
+            return HttpResponseRedirect(reverse("forums:forums_thread", args=[thread_id]))
     else:
         form = form_class(instance=post, no_subscribe=True)
 
-    return render("forums/post_edit.html", {
+    return render(request, "forums/post_edit.html", {
         "post": post,
         "form": form,
     })
@@ -318,7 +320,6 @@ def post_edit(request, post_kind, post_id):
 def subscribe(request, thread_id):
     user = request.user
     thread = get_object_or_404(ForumThread, pk=thread_id)
-
     if request.method == "POST":
         thread.subscribe(user, "email")
         return HttpResponseRedirect(reverse("forums_thread", args=[thread_id]))
@@ -479,6 +480,35 @@ def ajax_search(request):
         return HttpResponse("method_not_allowed")
 
 def ajax_flag(request):
-    current_user=request.user
+    context={}
     if request.method=="POST":
-        return HttpResponse("Working")
+        req=request.POST
+
+        post=None
+        post_id=int(req['post_id'])
+        post_kind=req['post_kind']
+
+        if post_kind=='reply':
+            post=get_object_or_404(ForumReply, pk=post_id)
+        if post_kind=='thread':
+            post=get_object_or_404(ForumThread, pk=post_id)
+
+        if post.flagged==True:
+            return HttpResponse("already_flagged")
+
+        else:
+            username=request.user.username
+            subject="Flagging"
+            message=username+" has flagged ["+ post.content + "] as inappropriate"
+
+            print (subject)
+            print (message)
+
+            post.flag_color="red"
+            post.flagged=True
+
+            post.save()
+
+            context['post']=post
+
+            return render(request, 'forums/flag.html', context)
