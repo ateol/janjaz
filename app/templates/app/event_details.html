@@ -8,7 +8,6 @@
 {% set_disqus_url object.get_absolute_url %}
 {% set_disqus_title object.headline %}
 {% disqus_dev %}
-{% load likes_inclusion_tags %}
 
 
 <section>
@@ -43,18 +42,28 @@
                 <div class="col-md-8 result-resize">
                     <p>
                        {{event.description}}
-
-                        {% likes event %}
                     </p>
                 </div>
             </div>
             <div class="row">
-                    <button type="submit" class="btn btn-success" style="margin: 10px 20px;">
-                        <i class="fa fa-thumbs-up"></i> Like
-                    </button>
-                    <div>
-                        <p>#Comments:  {{ comment_count }}</p>
+                    <div  class="col-md-3 col-md-offset-1" >
+                        <div id="like-div">{% include 'app/likes.html' %}</div>
+                        <span id="like-button" name="{{ event.id }}" class="fa-stack fa-lg">
+                        <i id="like-circle" class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
+                        </span>
+
+                        <span style="padding-left: 20px;" class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+                        </span>
                     </div>
+            </div>
+
+            <div class="row">
+                 <div class="col-md-3 col-md-offset-1">
+                     <p>#Comments:  {{ comment_count }}</p>
+                 </div>
             </div>
             <div class="row">
                 <div class="">

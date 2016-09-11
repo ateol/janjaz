@@ -283,6 +283,12 @@ class ForumThread(ForumPost):
     reply_count = models.IntegerField(default=0, editable=False)
     subscriber_count = models.IntegerField(default=0, editable=False)
 
+    likes=models.PositiveIntegerField(default=0)
+    users_liked=models.ManyToManyField(User)
+    like_color = models.CharField(max_length=20, default='gray')
+    flagged=models.BooleanField(default=False)
+    flag_color=models.CharField(max_length=30, default="gray")
+
     objects = ForumThreadManager()
 
     def inc_views(self):
@@ -357,6 +363,12 @@ class ForumReply(ForumPost):
     kind = "reply"
 
     thread = models.ForeignKey(ForumThread, related_name="replies")
+
+    likes=models.PositiveIntegerField(default=0)
+    users_liked=models.ManyToManyField(User)
+    like_color=models.CharField(max_length=20, default='gray')
+    flagged=models.BooleanField(default=False)
+    flag_color=models.CharField(max_length=30, default="gray")
 
     class Meta:
         verbose_name = "forum reply"

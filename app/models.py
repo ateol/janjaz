@@ -2,7 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
-from django.utils import timezone
+from django.utils.timezone import now
 from time import time
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
@@ -64,16 +64,16 @@ class EventDetails(models.Model):
 
     def __str__(self):
         return self.contact_name
-"""
+
 class EventComment(models.Model):
     comment_text=models.TextField()
     author=models.ForeignKey(User, null=True)
     author_profile=models.ForeignKey(UserProfile, null=True)
-    post_date=models.DateTimeField(default=timezone.now(), null=True)
+    post_date=models.DateTimeField(default=now, null=True)
     num_likes=models.IntegerField(default=0)
 
     def __str__(self):
-        return self.comment_text"""
+        return self.comment_text
 
 class Event(models.Model):
     category=models.CharField(max_length=20)
@@ -88,9 +88,10 @@ class Event(models.Model):
     event_organizer=models.OneToOneField(EventDetails, null=True)
 
     likes=models.PositiveIntegerField(default=0)
+    users_liked=models.ManyToManyField(User)
 
     def total_likes(self):
-        return self.likes.count()
+        return self.likes
 
     def __str__(self):
         return self.title
@@ -145,8 +146,5 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
-
-import secretballot
-secretballot.enable_voting_on(Event)
 
 

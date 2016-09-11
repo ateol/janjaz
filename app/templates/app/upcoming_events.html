@@ -9,7 +9,7 @@
                        <h3>Events in Turkey</h3>
                        <p>Discover all the events organized in Turkey. Join one or create your own and invite expats. Post an event
                         </p>
-                        <a href="{%url "create_event"%}" class="btn btn-lg btn-outline">
+                        <a href="{%url "app:create_event"%}" class="btn btn-lg btn-outline">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Create Event
                         </a>
                     </div>
@@ -72,7 +72,7 @@
                                 <p class="event-data">{{event.start_time}} - {{event.end_time}} <br> <i class="fa fa-map-marker"></i>{{event.city}}
                                 </p>
                                 <div>
-                                    <a href="{%url "upcoming_events"%}/{{event.id}}/" class="btn btn-default">Details</a>
+                                    <a href="{%url "app:upcoming_events"%}/{{event.id}}/" class="btn btn-default">Details</a>
                                 </div>
                             </div> 
                         </div> -->       
@@ -98,7 +98,7 @@
                                         <p class="event-data">{{event.start_time}} - {{event.end_time}} <br> <i class="fa fa-map-marker"></i> {{event.city}}
                                         </p>
                                         <div>
-                                           <a href="{%url "upcoming_events"%}/{{event.id}}/" class="btn btn-default">Details</a>
+                                           <a href="{%url "app:upcoming_events"%}/{{event.id}}/" class="btn btn-default">Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@
                                                 <p class="event-data">{{event.start_time}} - {{event.end_time}} <br> <i class="fa fa-map-marker"></i> {{event.city}}
                                                 </p>
                                                 <div>
-                                                <a href="{%url "upcoming_events"%}/{{event.id}}/" class="btn btn-default">Details</a>
+                                                <a href="{%url "app:upcoming_events"%}/{{event.id}}/" class="btn btn-default">Details</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -1,10 +1,11 @@
 {% extends 'forums/base.html' %}
+
 {% block content %}
 <div class="container f-body">
     <div class="row text-center content-wrapper">
         <div class="col-md-10 f-wrapper">
              {% for category, forums in all_forums %}
-                 <h2><a href="{% url "forums:forums_category" category.id%}">{{ category }}</h2>
+                 <h2><a href="{% url "forums:forums_category" category.id %}"> {{ category }} </h2>
                 <table class="table table-hover">
                     <thead>
                        <tr>
@@ -48,5 +49,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

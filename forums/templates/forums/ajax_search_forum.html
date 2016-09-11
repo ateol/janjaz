@@ -1,0 +1,24 @@
+<h4>Categories</h4>
+{% if categories %}
+    <div class="list-group">
+    {% for category in categories %}
+        <a class="list-group-item" href="{% url "forums:forums_category" category.id %}">{{ category.title }}</a>
+    {% endfor %}
+    </div>
+{% endif %}
+<h4>Forums</h4>
+{% if forums %}
+    <div class="list-group">
+    {% for forum in forums %}
+        <a class="list-group-item" href="{% url "forums:forums_forum" forum.id %}">{{ forum.title }}</a>
+    {% endfor %}
+    </div>
+{% endif %}
+<h4>Posts</h4>
+{% if posts %}
+    <div class="list-group">
+    {% for post in posts %}
+        <a class="list-group-item" href="{% url "forums:forums_thread" post.id %}">{{ post.title }}</a>
+    {% endfor %}
+    </div>
+{% endif %}

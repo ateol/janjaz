@@ -1,0 +1,39 @@
+{% extends "forums/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div style="padding-top: 50px" class="content">
+       <div class="row">
+           <div class="col-md-8 col-md-offset-2">
+
+               <form action="" method="post">
+              {% csrf_token %}
+
+              <div class="form-group">
+                <input id="search" class="form-control" type="text" placeholder="search" name="search" >
+              </div>
+             <h5>Search in the: </h5>
+            <div class="checkbox">
+                <label class="checkbox-inline"> <input type="checkbox" name="category" value="category">Categories</label>
+                <label class="checkbox-inline"> <input type="checkbox" name="forum" value="forum">Forums</label>
+                <label class="checkbox-inline"> <input type="checkbox" name="post" value="post">Posts</label>
+            </div>
+
+            <input type="submit" role="button" class="btn btn-success" value="Search">
+            </form>
+
+           </div>
+       </div>
+       <div class="row">
+           <div id="search-results" class="col-md-8 col-md-offset-2">
+
+           </div>
+       </div>
+    </div>
+
+{% endblock %}
+
+{% block localscripts %}
+    <script src="{% static "js/ajax_search.js" %}"></script>
+{% endblock %}

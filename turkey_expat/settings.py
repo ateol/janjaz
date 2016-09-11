@@ -110,8 +110,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'secretballot.middleware.SecretBallotIpMiddleware',
-    'likes.middleware.SecretBallotUserIpUseragentMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -167,8 +165,6 @@ INSTALLED_APPS = (
     'forums',
     'blog',
     'imagekit',
-    'likes',
-    'secretballot',
     
     'allauth',
     'allauth.account',

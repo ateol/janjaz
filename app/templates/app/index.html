@@ -55,7 +55,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{%url "user_profile"%}" id="logo" style="padding-top: 0; margin: 15px auto;"><img src="{% static "app/img/logo/logo2.png"%}" alt="logo"/> </a>
+                <a class="navbar-brand" href="{%url "app:user_profile"%}" id="logo" style="padding-top: 0; margin: 15px auto;"><img src="{% static "app/img/logo/logo2.png"%}" alt="logo"/> </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -65,30 +65,30 @@
                         <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Community </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{%url "under_construction"%}" >Members </a>
+                                <a href="{%url "app:under_construction"%}" >Members </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Pictures </a>
+                                <a href="{%url "app:under_construction"%}">Pictures </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Blog </a>
+                                <a href="{%url "app:under_construction"%}">Blog </a>
                             </li>
                         </ul>
                     </li>
                     <li class="page-scroll">
-                        <a href="{%url "under_construction"%}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Academics </a>
+                        <a href="{%url "app:under_construction"%}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Academics </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{%url "all_universities"%}">Universities</a>
+                                <a href="{%url "app:all_universities"%}">Universities</a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Study Materials </a>
+                                <a href="{%url "app:under_construction"%}">Study Materials </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Internship </a>
+                                <a href="{%url "app:under_construction"%}">Internship </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Courses/Tution <span class="glyphicon glyphicon-list-alt pull-right" aria-hidden="true"></span></a>
+                                <a href="{%url "app:under_construction"%}">Courses/Tution <span class="glyphicon glyphicon-list-alt pull-right" aria-hidden="true"></span></a>
                             </li>
                         </ul>
                     </li>
@@ -96,10 +96,10 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Classifieds </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{%url "under_construction"%}">Jobs </a>
+                                <a href="{%url "app:under_construction"%}">Jobs </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Businesses </a>
+                                <a href="{%url "app:under_construction"%}">Businesses </a>
                             </li>
                         </ul>
                     </li>
@@ -107,10 +107,10 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Accommodation </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{%url "under_construction"%}">Housing </a>
+                                <a href="{%url "app:under_construction"%}">Housing </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Hostels <span class="glyphicon glyphicon-bed pull-right" aria-hidden="true"></span></a>
+                                <a href="{%url "app:under_construction"%}">Hostels <span class="glyphicon glyphicon-bed pull-right" aria-hidden="true"></span></a>
                             </li>
                         </ul>
                     </li>
@@ -118,22 +118,22 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Useful info </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{%url "under_construction"%}">Transportation</a>
+                                <a href="{%url "app:under_construction"%}">Transportation</a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Immigration</a>
+                                <a href="{%url "app:under_construction"%}">Immigration</a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Noter </a>
+                                <a href="{%url "app:under_construction"%}">Noter </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Health Insurance </a>
+                                <a href="{%url "app:under_construction"%}">Health Insurance </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Consulates </a>
+                                <a href="{%url "app:under_construction"%}">Consulates </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Money Transfer </a>
+                                <a href="{%url "app:under_construction"%}">Money Transfer </a>
                             </li>
                         </ul>
                     </li>
@@ -141,10 +141,10 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Lifestyle </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{%url "upcoming_events"%}">Events </a>
+                                <a href="{%url "app:upcoming_events"%}">Events </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Prominent Places </a>
+                                <a href="{%url "app:under_construction"%}">Prominent Places </a>
                             </li>
                         </ul>
                     </li>
@@ -157,9 +157,9 @@
                             <button type="submit" class="btn btn-success" style="padding: 0 0; font-weight: 100;">Sign up</button>
                         </a> -->
                         {% if user.is_authenticated %}
-                            <a type="button" class="btn btn-success text-center" href="{% url "signout"%}" style="color: #fff;">Sign Out<i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                            <a type="button" class="btn btn-success text-center" href="{% url "app:signout"%}" style="color: #fff;">Sign Out<i class="fa fa-sign-in" aria-hidden="true"></i></a>
                         {% else %}
-                           <a type="button" class="btn btn-success text-center" href="{% url "login"%}" style="color: #fff;">Sign in <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                           <a type="button" class="btn btn-success text-center" href="{% url "app:login"%}" style="color: #fff;">Sign in <i class="fa fa-sign-in" aria-hidden="true"></i></a>
                         {% endif %}
                     </li>
                 </ul>
@@ -195,7 +195,7 @@
                      </div>
                      <div class="row">
                          <div class="col-md-4 col-md-offset-4 text-center">
-                             <a href="{%url "signup"%}" class="btn btn-lg btn-success" style="color: #fff"><span class="glyphicon glyphicon-arrow-right"></span> Sign up Now!</a>
+                             <a href="{%url "app:signup"%}" class="btn btn-lg btn-success" style="color: #fff"><span class="glyphicon glyphicon-arrow-right"></span> Sign up Now!</a>
                          </div>
                          </div>
                      </div>
@@ -543,7 +543,7 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>About Janjaz</h3>
-                        <p>Janjaz was created in 2016 <a href="{%url "home"%}">Home Page</a>.</p>
+                        <p>Janjaz was created in 2016 <a href="{%url "app:home"%}">Home Page</a>.</p>
                     </div>
                 </div>
             </div>
@@ -813,9 +813,12 @@
     <script src="{%static "app/scripts/freelancer.min.js"%}"></script>
 
     <!-- custom jquery -->
-    <script src="{%static "app/scripts/custom.js"%}"></script>
+     <script src="{%static "app/scripts/js.cookie.js"%}"></script>
+    <script src="{%static "app/custom_js/like_post.js"%}"></script>
+    <script src="{%static "app/custom_js/custom.js"%}"></script>
 
-    <script src="{%static "app/scripts/under_construction.js"%}"></script>
+    <script src="{%static "app/custom_js/under_construction.js"%}"></script>
+
 
 </body>
 

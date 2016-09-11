@@ -10,6 +10,7 @@ from app.forms import UserProfileForm, EventForm, EventWebsiteForm, EventDetails
 from app.models import Event, City, EventWebsite, EventDetails,  University, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+from django.views.decorators.csrf import  csrf_exempt
 
 def home(request):
     context={}
@@ -221,13 +222,6 @@ def EventDetails(request,event_id):
     current_profile=UserProfile.objects.get(user=current_user)
     context['event']=current_event
 
-    liked=False
-
-    if request.session.get('has_liked_'+str(event_id), liked):
-        liked=True
-        print("liked {}_{}").format(liked,event_id)
-
-
     """if request.method=="POST":
         event_comment_form=EventCommentForm(request.POST)
 
@@ -256,32 +250,6 @@ def EventDetails(request,event_id):
     context['event_comment_form']=event_comment_form"""
 
     return render(request, 'app/event_details.html', context)
-
-
-def like_count_event(request):
-    liked=False
-    if request.method=='Get':
-        event_id=request.GET['event_id']
-        event=Event.objects.get(id=int(event_id))
-        likes=event.likes
-
-        if request.session.get('has_liked_'+event_id,liked):
-            print('unlike')
-
-            if event.likes>0:
-                likes=event.likes+1
-                try:
-                    del request.session['has_liked_'+event_id]
-                except KeyError:
-                    print("KeyError")
-        else:
-            print("like")
-            request.session['has_liked_'+event_id]=True
-            likes=event.likes+1
-        event.likes=likes
-        event.save()
-
-        return HttpResponse(likes, liked)
 
 
 def UnderConstruction(request):
@@ -320,3 +288,33 @@ def AllUniversities(request):
     
     return render(request, 'app/all_universities.html', context)
 
+def like(request):
+    if request.method=='POST':
+        event_id=int(request.POST['event_id'])
+        event=get_object_or_404(Event, pk=event_id)
+        current_user=get_object_or_404(User, username=request.user.username)
+
+
+        context={
+            'event': event
+        }
+        if event and current_user:
+
+            print (event.title)
+            if event.users_liked.filter(username=current_user.username).exists():
+                event.likes=event.likes-1
+                context['color']='green'
+                if(event.likes< 0):
+                    event.likes=0
+                event.users_liked.remove(current_user)
+                event.save()
+            else:
+                context['color']='gray'
+                event.likes=event.likes+1
+                event.users_liked.add(current_user)
+                event.save()
+        else:
+            return HttpResponse('Error!')
+
+
+        return render(request, 'app/likes.html', context)

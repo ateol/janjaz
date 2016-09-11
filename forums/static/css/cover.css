@@ -1,0 +1,8 @@
+
+body {
+  text-align: center; }
+  body .emoji-wysiwyg-editor {
+    text-align: left; }
+    body .emoji-wysiwyg-editor.textarea-control {
+      min-height: 7em;
+      resize: vertical; }

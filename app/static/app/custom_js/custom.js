@@ -1,5 +1,5 @@
 
-(document).ready(function(){
+$(document).ready(function(){
 
 /* Here is the javascript for the search button to display the search results */
     $('#s-btn').click(

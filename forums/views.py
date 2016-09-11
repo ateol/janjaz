@@ -1,7 +1,8 @@
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect, Http404
+from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.shortcuts import get_object_or_404, render_to_response, render
 from django.template import RequestContext
+from forums.models import User
 
 from django.contrib import messages
 
@@ -14,7 +15,8 @@ from forums.models import (
     ForumReply,
     ForumThread,
     ThreadSubscription,
-    UserPostCount
+    UserPostCount,
+
 )
 
 def forums(request):
@@ -87,6 +89,8 @@ def forum(request, forum_id):
 
 def forum_thread(request, thread_id):
     member=request.user
+
+
     qs = ForumThread.objects.select_related("forum")
     thread = get_object_or_404(qs, id=thread_id)
 
@@ -190,13 +194,13 @@ def reply_create(request, thread_id):
 
     if thread.closed:
         messages.error(request, "This thread is closed.")
-        return HttpResponseRedirect(reverse("forums_thread", args=[thread.id]))
+        return HttpResponseRedirect(reverse("forums:forums_thread", args=[thread.id]))
 
     can_create_reply = request.user.has_perm("forums.add_forumreply", obj=thread)
 
     if not can_create_reply:
         messages.error(request, "You do not have permission to reply to this thread.")
-        return HttpResponseRedirect(reverse("forums_thread", args=[thread.id]))
+        return HttpResponseRedirect(reverse("forums:forums_thread", args=[thread.id]))
 
     if request.method == "POST":
         form = ReplyForm(request.POST)
@@ -235,6 +239,50 @@ def reply_create(request, thread_id):
     })
 
 
+def ajax_reply(request):
+
+    if request.method=="POST":
+
+        thread_id=int(request.POST['thread_id'])
+        content=request.POST['content']
+        subscription=request.POST['subscribe']
+
+        thread=get_object_or_404(ForumThread, pk=thread_id)
+
+        if thread:
+            if content=='':
+                return HttpResponse("no_content")
+
+            if thread.closed:
+                return HttpResponse("closed")
+
+            can_create_reply=request.user.has_perm("forums.add_forumreply",obj=thread)
+
+            if not can_create_reply:
+                return HttpResponse('no_perm')
+
+            post=ForumReply(content=content)
+            post.author=request.user
+            post.thread=thread
+
+            post.save()
+
+            if subscription=="yes":
+                thread.subscribe(post.author, 'email')
+
+            thread.subscribe(post.author, 'onsite')
+
+
+            context={
+                'post': post,
+                'thread': thread,
+                'member': request.user
+            }
+
+            return render(request, 'forums/post.html', context)
+    else:
+        return HttpResponse("method_not_allowed")
+
 @login_required
 def post_edit(request, post_kind, post_id):
 
@@ -256,7 +304,7 @@ def post_edit(request, post_kind, post_id):
         form = form_class(request.POST, instance=post, no_subscribe=True)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse("forums_thread", args=[thread_id]))
+            return HttpResponseRedirect(reverse("forum:forums_thread", args=[thread_id]))
     else:
         form = form_class(instance=post, no_subscribe=True)
 
@@ -306,3 +354,131 @@ def thread_updates(request):
     }
     ctx = RequestContext(request, ctx)
     return render(request, "forums/thread_updates.html", ctx)
+
+def likes(request):
+    if request.method=="POST":
+        post_id=request.POST['post_id']
+        post_kind=request.POST['post_kind']
+
+        post=None
+        if post_kind=="thread":
+            post=get_object_or_404(ForumThread, pk=post_id)
+        elif post_kind=="reply":
+            post=get_object_or_404(ForumReply, pk=post_id)
+
+        current_user=get_object_or_404(User, username=request.user.username)
+
+        context={}
+        if post and current_user:
+            if post.users_liked.filter(username=current_user.username).exists():
+                post.likes-=1
+                post.users_liked.remove(current_user)
+                if post.likes<0:
+                    post.likes=0
+                post.like_color = 'gray'
+                post.save()
+
+            else:
+                post.likes+=1
+                post.users_liked.add(current_user)
+                post.like_color = 'green'
+                post.save()
+
+
+            context['post']=post
+
+            return render(request, 'forums/likes.html', context)
+
+        else:
+            return HttpResponse("You can not like this post")
+
+
+def Search(request):
+    return render(request, 'forums/search_forum.html', {})
+
+def ajax_search(request):
+    context={}
+    if request.method=="POST":
+        query=request.POST['search']
+        post=request.POST['post']
+        category=request.POST['category']
+        forum=request.POST['forum']
+
+        print(post)
+        print(category)
+        print(forum)
+
+        if query=='':
+            return HttpResponse('must_enter_search_term')
+        if post=='no' and category=='no' and forum=='no':
+            forums = Forum.objects.filter(title__icontains=query)
+            context['forums'] = forums
+
+            print(forums)
+
+            categories = ForumCategory.objects.filter(title__icontains=query)
+            context['categories'] = categories
+
+            print(categories)
+
+            posts = ForumThread.objects.filter(title__icontains=query)
+            context['posts'] = posts
+
+        elif category=='yes' and forum=='no' and post=='no':
+            categories=ForumCategory.objects.filter(title__icontains=query)
+            context['categories']=categories
+
+        elif category=='no' and forum=='yes' and post=='no':
+            forums = Forum.objects.filter(title__icontains=query)
+            context['forums'] = forums
+
+        elif category=='no' and forum=='no' and post=='yes':
+            posts = ForumThread.objects.filter(title__icontains=query)
+            context['posts'] =posts
+
+
+        elif category=='yes' and forum=='yes' and post=='no':
+            categories = ForumCategory.objects.filter(title__icontains=query)
+            context['categories'] = categories
+
+            forums = Forum.objects.filter(title__icontains=query)
+            context['forums'] = forums
+
+        elif category=='yes' and forum=='no' and post=='yes':
+            categories = ForumCategory.objects.filter(title__icontains=query)
+            context['categories'] = categories
+
+            posts = ForumThread.objects.filter(title__icontains=query)
+            context['posts'] = posts
+
+
+        elif category=='no' and forum=='yes' and post=='yes':
+            forums = Forum.objects.filter(title__icontains=query)
+            context['forums'] = forums
+
+            posts = ForumThread.objects.filter(title__icontains=query)
+            context['posts'] = posts
+
+        elif category=='yes' and forum=='yes' and post=='yes':
+
+            forums = Forum.objects.filter(title__icontains=query)
+            context['forums'] = forums
+
+            print(forums)
+
+            categories = ForumCategory.objects.filter(title__icontains=query)
+            context['categories'] = categories
+
+            print(categories)
+
+            posts = ForumThread.objects.filter(title__icontains=query)
+            context['posts'] = posts
+
+        return render(request, 'forums/ajax_search_forum.html', context)
+    else:
+        return HttpResponse("method_not_allowed")
+
+def ajax_flag(request):
+    current_user=request.user
+    if request.method=="POST":
+        return HttpResponse("Working")

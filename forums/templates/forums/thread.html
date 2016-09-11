@@ -1,4 +1,6 @@
-{% extends "forums/base.html "%}
+{% extends "forums/base.html"%}
+{% load static %}
+
 {%block content %}
 <div class="container">
       <div class="row">
@@ -6,6 +8,7 @@
           <h1 id="f-title">{{ thread }}</h1>
         </div>
         <!-- thread button -->
+          <span id="thread-id" data-id="{{ thread.id }}"></span>
         <div class="col-md-2 btn-thread " id="btn-thread-up">
           <a role="button" href="{% url "forums:forums_reply_create" thread.id %}" class="btn btn-primary">New thread</a>
         </div>
@@ -14,45 +17,36 @@
       {% for post in posts %}
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <div class="threadWrapper">
-            <div class="col-md-3 u-info-wrapper">
-              <div class="circle" id="f-avatar">
-              </div>
-              <div class="fu-info">
-                <p><a href=""><strong>{{ post.author }}</strong></a></p>
-                <p>{{post.author.date_joined}}</p>
-                <p>{{ post.author.country_of_origin }}</p>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <p class="p-style">
-                  {{ post.content }}
-              </p>
-              
-              <p class="likes">
-                
-                <span>0 </span>
-
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-                  </span>
-
-                  <span style="padding-left: 20px;" class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
-                  </span>
-
-              </p>
-
-            </div>
-          </div>
+          <div>{% include "forums/post.html" %}</div>
         </div>
       </div>
       {% endfor %}
       <div class="row">
-        <div class="col-md-2 btn-thread">
-          <a role="button" href="{% url "forums:forums_reply_create" thread.id %}" class="btn btn-primary">New thread</a>
-        </div>
+          <div class="col-md-8 col-md-offset-2">
+              <form  class="form" method="post" action="">
+                  {% csrf_token %}
+                  <div class="lead emoji-picker-container">
+                      <textarea name="content" class="form-control textarea-control" rows="3" id="comment" placeholder="Leave a reply" data-emojiable="true"></textarea>
+                  </div>
+
+                  <div class="checkbox">
+                      <label><input name="subscribe" type="checkbox" value="subscribe">Subscribe</label>
+                  </div>
+                  <input type="submit" id="submit-button" role="button" class="btn btn-success" value="Reply">
+              </form>
+          </div>
       </div>
+</div>
+{% endblock %}
+
+{% block localscripts %}
+     <script src="{% static "js/flag_post.js"%}"></script>
+     <script src="{% static "lib/js/nanoscroller.min.js"%}"></script>
+     <script src="{% static "lib/js/tether.min.js"%}"></script>
+     <script src="{% static "lib/js/config.js"%}"></script>
+     <script src="{% static "lib/js/util.js"%}"></script>
+     <script src="{% static "lib/js/jquery.emojiarea.js"%}"></script>
+     <script src="{% static "lib/js/emoji-picker.js"%}"></script>
+     <script src="{%static "js/like_post.js"%}"></script>
+     <script src="{%static "js/reply.js"%}"></script>
 {% endblock %}
