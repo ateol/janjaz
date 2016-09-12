@@ -67,8 +67,32 @@ nav {
     right: 50%;
 }
 
+.dropdown-menu {
+    background: #3a5368;
+    padding: 0;
+    border-bottom: 8px solid #de6840;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    display: block;
+    float: left;
+    position: relative;
+    right: 0;
+    border-bottom: 1px solid #233140;
+    padding: 0;
+}
+
+.dropdown-menu li > a {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 10px;
+}
+
 .navbar-default .navbar-nav >li:last-child {
-    border-right: 1px solid white;
+    /*border-right: 1px solid white;*/
 }
 
 .navbar-default .navbar-nav >li:hover {
@@ -82,7 +106,7 @@ nav {
     text-transform: uppercase;
     font-weight: 600 !important;
     display: block;
-    border-left: 1px solid white;
+    /*border-left: 1px solid white;*/
 }
 
 .navbar-default .navbar-nav >li>a:hover {
@@ -112,6 +136,12 @@ nav {
 .h-list > li {
    float: right;
    /*display: inline-block;*/
+}
+
+@media only screen and (max-width: 767px) {
+    #social-icons > li {
+        float: left;
+    }
 }
 
 .h-list > li > a {
