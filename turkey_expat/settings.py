@@ -110,6 +110,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'secretballot.middleware.SecretBallotIpMiddleware',
+    'likes.middleware.SecretBallotUserIpUseragentMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -139,6 +141,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
+                "django.core.context_processors.request"
             ],
             'loaders': [
                'django.template.loaders.filesystem.Loader',
@@ -163,6 +166,9 @@ INSTALLED_APPS = (
     'whoosh',
     'forums',
     'blog',
+    'imagekit',
+    'likes',
+    'secretballot',
     
     'allauth',
     'allauth.account',

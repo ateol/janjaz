@@ -9,6 +9,7 @@ from django.contrib.auth.models import  User
 from app.forms import UserProfileForm, EventForm, EventWebsiteForm, EventDetailsForm
 from app.models import Event, City, EventWebsite, EventDetails,  University, UserProfile
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
 
 def home(request):
     context={}
@@ -166,9 +167,13 @@ def UpcomingEvents(request):
     context['upcoming_events']=upcoming_events
 
     if request.method=='GET':
-        city_choices={}
-        for city in City.objects.all():
-            city_choices[city.name.upper()]=city.name
+        city_choices= city_choices = {
+            'ANKARA': 'Ankara',
+            'ISTANBUL': 'Istanbul',
+            'KONYA': 'Konya'
+        }
+        #for city in City.objects.all():
+            #city_choices[city.name.upper()]=city.name
 
 
         values=request.GET
@@ -211,10 +216,17 @@ def UpcomingEvents(request):
 @login_required()
 def EventDetails(request,event_id):
     context={}
-    current_event=Event.objects.get(pk=event_id)
+    current_event=get_object_or_404(Event, pk=event_id)
     current_user=request.user
     current_profile=UserProfile.objects.get(user=current_user)
     context['event']=current_event
+
+    liked=False
+
+    if request.session.get('has_liked_'+str(event_id), liked):
+        liked=True
+        print("liked {}_{}").format(liked,event_id)
+
 
     """if request.method=="POST":
         event_comment_form=EventCommentForm(request.POST)
@@ -244,6 +256,33 @@ def EventDetails(request,event_id):
     context['event_comment_form']=event_comment_form"""
 
     return render(request, 'app/event_details.html', context)
+
+
+def like_count_event(request):
+    liked=False
+    if request.method=='Get':
+        event_id=request.GET['event_id']
+        event=Event.objects.get(id=int(event_id))
+        likes=event.likes
+
+        if request.session.get('has_liked_'+event_id,liked):
+            print('unlike')
+
+            if event.likes>0:
+                likes=event.likes+1
+                try:
+                    del request.session['has_liked_'+event_id]
+                except KeyError:
+                    print("KeyError")
+        else:
+            print("like")
+            request.session['has_liked_'+event_id]=True
+            likes=event.likes+1
+        event.likes=likes
+        event.save()
+
+        return HttpResponse(likes, liked)
+
 
 def UnderConstruction(request):
     context={}
@@ -280,3 +319,4 @@ def AllUniversities(request):
     context['city_choices']=city_choices.items()
     
     return render(request, 'app/all_universities.html', context)
+
