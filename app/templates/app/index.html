@@ -51,24 +51,18 @@
     <!-- Navigation -->
      <nav id="mainNav" class="navbar navbar-default">
         <div class="container">
-<<<<<<< HEAD
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="{%url "app:user_profile"%}" id="logo" style="padding-top: 0; margin: 15px auto;"><img src="{% static "app/img/logo/logo2.png"%}" alt="logo"/> </a>
-=======
 
             <div class="row" id="logo-container">
                 <div class="col-md-5 col-md-offset-1">
+                    {% comment %}
                     <!-- <a class="navbar-brand" href="{%url "user_profile"%}" id="logo" style="padding-top: 0; margin: 15px auto;"><img src="{% static "app/img/logo/logo2.png"%}" alt="logo"/></a>-->
                     <!-- Brand and toggle get grouped for better mobile display -->
+                    {% endcomment%}
                     <div class="navbar-header page-scroll">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="{%url "user_profile"%}" id="logo" style="padding-top: 0; margin: 0 auto;"><img src="{% static "app/img/logo/logo2.png"%}" alt="logo"/> </a>
+                        <a class="navbar-brand" href="{%url "app:user_profile"%}" id="logo" style="padding-top: 0; margin: 0 auto;"><img src="{% static "app/img/logo/logo2.png"%}" alt="logo"/> </a>
                     </div>
                 </div>
                 <div class="col-md-3" style="padding-top: 10px;">
@@ -86,72 +80,43 @@
                         <li><a href="#">Tur</a></li>
                     </ul>
                 </div>
->>>>>>> 5fe6a3137f9c398fcc9e7a57d22be66c9e8308bd
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="page-scroll">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <i class="fa fa-users" aria-hidden="true"></i><br>
                             Community 
                         </a>
-                        <!--
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{%url "app:under_construction"%}" >Members </a>
-                            </li>
-                            <li>
-                                <a href="{%url "app:under_construction"%}">Pictures </a>
-                            </li>
-                            <li>
-                                <a href="{%url "app:under_construction"%}">Blog </a>
-                            </li>
-                        </ul> -->
                     </li>
                     <li class="page-scroll">
-<<<<<<< HEAD
-                        <a href="{%url "app:under_construction"%}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Academics </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{%url "app:all_universities"%}">Universities</a>
-                            </li>
-                            <li>
-                                <a href="{%url "app:under_construction"%}">Study Materials </a>
-=======
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <i class="fa fa-life-ring" aria-hidden="true"></i><br />
                             Lifestyle
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{%url "upcoming_events"%}">Events </a>
+                                <a href="{%url "app:upcoming_events"%}">Events </a>
                             </li>
                             <li>
-                                <a href="{%url "under_construction"%}">Prominent Places </a>
->>>>>>> 5fe6a3137f9c398fcc9e7a57d22be66c9e8308bd
+                                <a href="{%url "app:under_construction"%}">Prominent Places </a>
                             </li>
                         </ul>
                     </li>
                     <li class="page-scroll">
-                        <a href="{%url "under_construction"%}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                        <a href="{%url "app:under_construction"%}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <i class="fa fa-graduation-cap" aria-hidden="true"></i><br/>
                             Education
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-<<<<<<< HEAD
-                                <a href="{%url "app:under_construction"%}">Internship </a>
+                                <a href="{%url "app:all_universities"%}">Universities</a>
                             </li>
                             <li>
-                                <a href="{%url "app:under_construction"%}">Courses/Tution <span class="glyphicon glyphicon-list-alt pull-right" aria-hidden="true"></span></a>
-=======
-                                <a href="{%url "all_universities"%}">Universities</a>
-                            </li>
-                            <li>
-                                <a href="{%url "under_construction"%}">Scholarship Opportunities</a>
->>>>>>> 5fe6a3137f9c398fcc9e7a57d22be66c9e8308bd
+                                <a href="{%url "app:under_construction"%}">Scholarship Opportunities</a>
                             </li>
                         </ul>
                     </li>
@@ -210,38 +175,19 @@
                         </ul>
                     </li>
                     <li class="page-scroll">
-<<<<<<< HEAD
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Lifestyle </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{%url "app:upcoming_events"%}">Events </a>
-                            </li>
-                            <li>
-                                <a href="{%url "app:under_construction"%}">Prominent Places </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#">Forum</a>
-=======
                         <a href="#">
                             <i class="fa fa-comments" aria-hidden="true"></i><br/>
                             Forum
                         </a>
->>>>>>> 5fe6a3137f9c398fcc9e7a57d22be66c9e8308bd
                     </li>
                     <li class="page-scroll">
                         {% if user.is_authenticated %}
                             <a type="button" class="btn btn-success text-center" href="{% url "app:signout"%}" style="color: #fff;">Sign Out<i class="fa fa-sign-in" aria-hidden="true"></i></a>
                         {% else %}
-<<<<<<< HEAD
-                           <a type="button" class="btn btn-success text-center" href="{% url "app:login"%}" style="color: #fff;">Sign in <i class="fa fa-sign-in" aria-hidden="true"></i></a>
-=======
-                           <a href="{% url "login"%}">
+                           <a href="{% url "app:login"%}">
                                <i class="fa fa-lock" aria-hidden="true"></i><br/>
                                Sign in
                            </a>
->>>>>>> 5fe6a3137f9c398fcc9e7a57d22be66c9e8308bd
                         {% endif %}
                     </li>
                 </ul>
@@ -649,234 +595,6 @@
         </a>
     </div>
 
-    <!-- Portfolio Modals -->
-    <!--
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
-    
     <!-- jQuery -->
      <script src="{%static "app/scripts/jquery-1.10.2.js"%}"></script>
 
